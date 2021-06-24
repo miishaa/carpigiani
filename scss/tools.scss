@@ -1,0 +1,157 @@
+.container{
+  max-width: 1280px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.vh{
+  min-height: 100vh;
+}
+.btn{
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  font-weight: 900;
+  box-shadow: 0 4px 1px #a8a8a8;
+}
+.btn:hover{
+  transform: scale(.98);
+}
+.text-center{
+  text-align: center;
+}
+//colors
+.bg-main{
+  background-color:$main_color;
+}
+.bg-secondary{
+  background-color: $secondary;
+}
+.bg-light-blue{
+  background-color: $light_blue;
+}
+.bg-pink{
+  background-color: $pink;
+}
+.bg-light{
+  background-color: $light;
+}
+
+.text-main{
+color:$main_color;
+}
+.text-secondary{
+  color: $secondary;
+}
+.text-pink{
+  color: $pink;
+}
+.text-light{
+  color: $light;
+}
+.text-light-blue{
+  color: $light_blue;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  height: 100%;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+//text-sizes
+.lead{
+  font-size: 20px;
+}
+.sm{
+  font-size: 1rem;
+}
+.md{
+  font-size: 2rem;
+}
+.lg{
+  font-size: 3rem;
+}
+.xl{
+  font-size: 4rem;
+}
+//margin
+
+.my-1{
+  margin: 1rem 0;
+}
+.my-2{
+  margin: 1.5rem 0;
+}
+.my-3{
+  margin: 2rem 0;
+}
+.my-4{
+  margin: 3rem 0;
+}
+.my-5{
+  margin: 4rem 0;
+}
+
+.m-1{
+  margin: 1rem;
+}
+.m-2{
+  margin: 1.5rem;
+}
+.m-3{
+  margin: 2rem;
+}
+.m-4{
+  margin: 3rem;
+}
+.m-5{
+  margin: 4rem;
+}
+
+//padding
+
+.py-1{
+  padding: 1rem 0;
+}
+.py-2{
+  padding: 1.5rem 0;
+}
+.py-3{
+  padding: 2rem 0;
+}
+.py-4{
+  padding: 3rem 0;
+}
+.py-5{
+  padding: 4rem 0;
+}
+
+.p-1{
+  padding: 1rem;
+}
+.p-2{
+  padding: 1.5rem;
+}
+.p-3{
+  padding: 2rem;
+}
+.p-4{
+  padding: 3rem;
+}
+.p-5{
+  padding: 4rem;
+}

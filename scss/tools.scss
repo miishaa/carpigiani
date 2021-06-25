@@ -125,16 +125,19 @@ color:$main_color;
 //padding
 
 .py-1{
-  padding: 1rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .py-2{
   padding: 1.5rem 0;
 }
 .py-3{
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-4{
-  padding: 3rem 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .py-5{
   padding: 4rem 0;
@@ -154,4 +157,85 @@ color:$main_color;
 }
 .p-5{
   padding: 4rem;
+}
+//circle
+.circle-plus {
+  height:6rem;
+  width:6rem;
+  font-size:1rem /*Will change icon size*/;
+  position: relative;
+}
+.circle-plus .circle {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 100%;
+  border: solid 0.2rem #dfdad7;
+  background-color: #dcc62b;
+  box-shadow: 3px 3px 0 #000;
+  top: 50%;
+  right: -50%;
+  transform: translate(-50%, -50%);
+}
+.circle-plus .circle .horizontal {
+  position: absolute;
+  background-color: #DFDAD7;
+  width: 2.4rem;
+  height: .4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.circle-plus .circle .vertical {
+  position: absolute;
+  background-color: #DFDAD7;
+  width: .4rem;
+  height: 2.4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.triangle-left,
+.triangle-right,
+.triangle-top,
+.triangle-bottom{
+  width: 0;
+  height: 0;
+  margin: 30px auto;
+}
+.triangle-left,
+.triangle-right{
+  border-top:
+          18px solid transparent;
+  border-bottom:
+          18px solid transparent;
+
+
+}
+.triangle-top,
+.triangle-bottom{
+  border-left:
+          18px solid transparent;
+  border-right:
+          18px solid transparent;
+}
+
+.triangle-right{
+  border-left:
+          30px solid black;
+}
+.triangle-left{
+  border-right:
+          30px solid black;
+}
+.triangle-top{
+  border-bottom:
+          30px solid black;
+}
+.triangle-bottom{
+  border-top:
+          30px solid black;
 }

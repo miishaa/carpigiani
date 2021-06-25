@@ -1,0 +1,130 @@
+//===================
+//@media (min-width: 768px) {
+//  .menu__list{
+//    display: flex;
+//    align-items: center;
+//  }
+//  .menu__list > li{
+//    padding: 10px 0;
+//  }
+//  .menu__sub-list{
+//    transform: translate(0px, 10%);
+//    opacity: 0;
+//    visibility: hidden;
+//    pointer-events: none;
+//    transition: all .3s ease-in-out;
+//  }
+//}
+@media (max-width: 768px) {
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .header__body.grid{
+    grid-template-columns: auto 30px;
+  }
+  .header__menu{
+    order: 2;
+  }
+  .header__logo {
+    order: 1;
+    z-index: 3;
+    align-self: flex-start;
+    svg{
+      height: 40px;
+      fill: $main_color;
+    }
+  }
+  .header__btn{
+    display: none;
+  }
+  .menu__icon{
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .menu__icon:after, .menu__icon:before, .menu__icon span{
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: .3s;
+    background-color: $main_color;
+  }
+  .menu__icon:after, .menu__icon:before{
+    content: '';
+  }
+  .menu__icon:after{
+    bottom: 0;
+  }
+  .menu__icon:before{
+    top: 0;
+  }
+  .menu__icon span{
+    top: 50%;
+    transform: scale(1) translate(0, -50%);
+  }
+  .menu__icon.active span{
+        transform: scale(0) translate(0, -50%);
+      }
+  .menu__icon.active:before{
+    top: 50%; transform: rotate(-45deg) translate(0, -50%);
+  }
+  .menu__icon.active:after{
+    bottom: 50%; transform: rotate(45deg) translate(0, 50%);
+  }
+  .menu__body {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: $light;
+    padding: 100px 30px 30px;
+    transition: right .3s;
+    overflow: auto;
+  }
+  .menu__body.active{
+    right: 0;
+  }
+  .menu__body:before{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    background-color: $secondary;
+    z-index: 2;
+  }
+  .menu__list.flex{
+    flex-direction: column;
+  }
+  .menu__list > li{
+    flex-wrap: wrap;
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+  }
+  .menu__list > li.active .menu__sub-list{
+    display: block;
+  }
+  .menu__link{
+    font-size: 24px;
+  }
+  .menu__sub-list{
+    position: relative;
+    background: seagreen;
+    flex: 1 1 100% ;
+    margin: 20px 0 0 0;
+    display: none;
+  }
+  .menu__sub-link{
+    color: black; font-size: 20px;
+  }
+}

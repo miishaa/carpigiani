@@ -21,6 +21,10 @@
 .btn:hover{
   transform: scale(.98);
 }
+.btn.bg-light:hover{
+  transform: scale(.98);
+  background-color: $main_color;
+}
 .text-center{
   text-align: center;
 }

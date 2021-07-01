@@ -23,6 +23,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         asNavFor: '.mini-slider',
         arrows: false,
+        draggable: false,
 
     });
     $('.mini-slider').slick({

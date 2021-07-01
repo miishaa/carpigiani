@@ -1,5 +1,5 @@
 .container{
-  max-width: 1280px;
+  max-width: 1460px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -8,25 +8,33 @@
 }
 .btn{
   display: inline-block;
-  padding: 10px 30px;
+  padding: 17.5px 19px ;
   cursor: pointer;
-  font-size: 1.2rem;
-  color: black;
-  border-radius: 10px;
-  border: 2px solid black;
+  font: 700 18px/21.6px 'Service gothic', sans-serif;
+  color: $black;
+  border: 2px solid $black;
   text-transform: uppercase;
-  font-weight: 900;
-  box-shadow: 0 4px 1px #a8a8a8;
+  box-shadow: 2px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
 }
-.btn:hover{
-  transform: scale(.98);
-}
+
 .btn.bg-light:hover{
-  transform: scale(.98);
   background-color: $main_color;
+}
+.btn.bg-main:hover{
+  background-color: $light;
+}
+.btn.bg-pink:hover{
+  background-color: $red;
+}
+.btn.bg-light-blue:hover{
+  background-color: $light;
 }
 .text-center{
   text-align: center;
+}
+.btn.bg-light.hover-blue:hover{
+  background-color: $secondary;
 }
 //colors
 .bg-main{
@@ -164,22 +172,23 @@ color:$main_color;
 }
 //circle
 .circle-plus {
-  height:6rem;
-  width:6rem;
+  width: 90px;
+  height: 90px;
   font-size:1rem /*Will change icon size*/;
-  position: relative;
 }
 .circle-plus .circle {
   position: relative;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 100%;
+  height: 100%;
   border-radius: 100%;
-  border: solid 0.2rem #dfdad7;
-  background-color: #dcc62b;
-  box-shadow: 3px 3px 0 #000;
-  top: 50%;
-  right: -50%;
-  transform: translate(-50%, -50%);
+  //top: 50%;
+  //right: -50%;
+  //transform: translate(-50%, -50%);
+  margin: 0;
+  background: $cream;
+  border: 1.50195px solid #F8F2E3;
+  box-sizing: border-box;
+  box-shadow: 1.50195px 3.00389px 0 rgba(0, 0, 0, 0.2);
 }
 .circle-plus .circle .horizontal {
   position: absolute;

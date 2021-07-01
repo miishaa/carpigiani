@@ -1,3 +1,42 @@
+
+.header{
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+.header__body{
+  grid-template-columns: 142px auto 200px;
+  padding: 15px;
+  column-gap: 57px;
+}
+.menu__list{
+  text-transform: uppercase;
+  @media (min-width: 768px){
+    justify-content: flex-start;
+  }
+}
+.header__btn .btn{
+  border-radius: 0;
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .menu__item:not(:last-child){
+    margin-left: 10px;
+  }
+}
+.menu__link{
+  display: block;
+  padding: 10px;
+}
+.menu__list{
+  font: 600 14px/1 "Service gothic", sans-serif;
+  letter-spacing: 0.15em;
+}
+
+
 @media (min-width: 768px) {
 
   .menu__list > li:first-child{
@@ -8,8 +47,9 @@
       border: 2px solid black;
       border-radius: 15px 0 0 0;
     }
-    &:hover > a{
+    &:hover > span{
       color: black;
+      cursor: default;
     }
     &:hover .menu__sub-list{
       opacity: 1;
@@ -26,8 +66,9 @@
       border: 2px solid black;
       border-radius: 15px 0 0 0;
     }
-    &:hover > a{
+    &:hover > span{
       color: black;
+      cursor: default;
     }
     &:hover .menu__sub-list-2{
       opacity: 1;
@@ -151,6 +192,7 @@
     top: 0;
     left: 0;
     right: 0;
+    background-color: $secondary;
   }
   .header__body.grid{
     grid-template-columns: auto 30px;

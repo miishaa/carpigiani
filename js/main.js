@@ -23,14 +23,16 @@ $(document).ready(function() {
         slidesToScroll: 1,
         asNavFor: '.mini-slider',
         arrows: false,
-        draggable: false,
+        draggable: true,
+        infinite: true
 
     });
     $('.mini-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         asNavFor: '.kit',
-        draggable: false
+        draggable: true,
+        infinite: true
     });
     $('.values-mobile-slider').slick({
         slidesToShow: 1,
@@ -43,7 +45,9 @@ $(document).ready(function() {
         slidesToScroll: 1,
         appendArrows: $('.mobile-btn-offer'),
         centerMode: true,
-        centerPadding: '10px'
+        centerPadding: '10px',
+        autoplay: true,
+        autoplaySpeed: 2000
     })
 });
 
@@ -104,19 +108,44 @@ if (menuCloses.length > 0){
         });
     }
 }
-//
-// //
-// // pc or mobileconst
-// isMobile = { Android: function() {return navigator.userAgent.match(/Android/i);}, BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);}, iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);}, Opera: function() {return navigator.userAgent.match(/Opera Mini/i);}, Windows: function() {return navigator.userAgent.match(/IEMobile/i);}, any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}};
-// if(isMobile.any()){ document.body.classList.add('touch');
-//     let menuArrows=document.querySelectorAll('.menu__arrow');
-//     if (menuArrows.length > 0){ for (let index = 0; index < menuArrows.length; index++) {
-//         const menuArrow = menuArrows[index];
-//         menuArrow.addEventListener("click", function (e) {
-//             menuArrow.parentElement.classList.toggle('active');
-//         });
-//     }
-//     }
-// }else{ document.body.classList.add('mouse');
-// }
-//
+
+
+//animation on scroll
+
+const animItems = document.querySelectorAll('._anim-items');
+
+if( animItems.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+    function animOnScroll(param) {
+        for (let index = 0; index < animItems.length; index++){
+            const animItem = animItems[index];
+            const animItemHeight = animItem.offsetHeight;
+            const animItemOffset = offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+            if (animItemHeight > window.innerHeight ) {
+                animItemPoint =  window.innerHeight - window.innerHeight / animStart;
+            }
+
+            if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                animItem.classList.add('_active');
+            } else {
+                if (!animItem.classList.contains('_anim-no-hide')) {
+                    animItem.classList.remove('_active');
+                }
+            }
+        }
+    }
+    function offset(el) {
+        const rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
+    }
+    setTimeout(() => {
+        animOnScroll();
+    }, 300)
+
+}

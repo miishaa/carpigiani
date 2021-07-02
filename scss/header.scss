@@ -7,7 +7,7 @@
   z-index: 50;
 }
 .header__body{
-  grid-template-columns: 142px auto 200px;
+  grid-template-columns: 142px auto 171px;
   padding: 15px;
   column-gap: 57px;
 }
@@ -19,8 +19,9 @@
 }
 .header__btn .btn{
   border-radius: 0;
-  width: 100%;
+  min-width: 171px;
   text-align: center;
+  padding: 12px 25px;
 }
 @media (min-width: 768px) {
   .menu__item:not(:last-child){
@@ -206,7 +207,9 @@
     align-self: flex-start;
     svg{
       height: 40px;
-      fill: $main_color;
+      fill: #ffdb58;
+      width: 110px;
+      margin-left: -15px;
     }
   }
   .header__btn{

@@ -1,65 +1,35 @@
-new CircleType(document.getElementById('up'))
-    .radius(200);
-
-new CircleType(document.getElementById('up-2'))
-    .radius(200);
-
-new CircleType(document.getElementById('down'))
-    .dir(-1)
-    .radius(200);
-new CircleType(document.getElementById('up-mobile'))
-    .radius(200);
-
-new CircleType(document.getElementById('up-2-mobile'))
-    .radius(200);
-
-new CircleType(document.getElementById('down-mobile'))
-    .radius(200);
-
 //slider
 
-$(document).ready(function() {
-    $('.kit').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.mini-slider',
-        arrows: false,
-        draggable: true,
-        infinite: true
 
-    });
-    $('.mini-slider').slick({
+if( $(window).width() <= 768 ) {
+    $('.innovation-2__body').slick({
+        arrows: true,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.kit',
-        draggable: true,
-        infinite: true
-    });
-    $('.values-mobile-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 1500,
-    });
-    $('.offer__row-slider').slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        appendArrows: $('.mobile-btn-offer'),
-        centerMode: true,
-        centerPadding: '10px',
-        autoplay: true,
-        autoplaySpeed: 1500,
         responsive: [
             {
+                breakpoint: 2500,
+                settings: "unslick",
+            },
+            {
                 breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
+                settings: "slick",
+            },
         ]
+
     })
+}
+
+
+
+$(document).ready(function() {
+    $('.story-about__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 1500
+    });
 });
 
 // trick
@@ -89,12 +59,11 @@ function animateMarquee(el, duration) {
         requestAnimationFrame(step);
     });
 }
-const marquee1 = document.querySelector('#marquee1');
-const marquee2 = document.querySelector('#marquee2');
 
 
-animateMarquee(marquee1, 10000);
-animateMarquee(marquee2, 15000);
+const marquee3 = document.querySelector('#marquee3');
+
+animateMarquee(marquee3, 15000);
 
 
 
@@ -109,6 +78,7 @@ if (iconMenu) { iconMenu.addEventListener("click", function (e) {
 });
 }
 
+
 //submenu
 let menuCloses = document.querySelectorAll('.menu__close');
 if (menuCloses.length > 0){
@@ -119,6 +89,7 @@ if (menuCloses.length > 0){
         });
     }
 }
+
 
 //animation on scroll
 

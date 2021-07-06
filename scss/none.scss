@@ -22,6 +22,8 @@ html,body{
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: $black;
+  font: normal 18px/26px "Moderat",sans-serif;
+  letter-spacing: -0.01em;
 }
 input,button,textarea{font-family:inherit;}
 

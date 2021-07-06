@@ -6,6 +6,9 @@
 .vh{
   min-height: 100vh;
 }
+.vh-static{
+  min-height: 100vh;
+}
 .btn{
   display: inline-block;
   padding: 17.5px 19px ;
@@ -69,6 +72,9 @@ color:$main_color;
 }
 .text-light-blue{
   color: $light_blue;
+}
+.br{
+  display: block;
 }
 .flex{
   display: flex;
@@ -253,4 +259,193 @@ color:$main_color;
 .triangle-bottom{
   border-top:
           30px solid black;
+}
+
+//dream team
+
+
+//.dream-team{
+//  &:after {
+//    content: "dream team";
+//    position: absolute;
+//    box-sizing: border-box;
+//    display: block;
+//    border-radius: 50%;
+//    width: 236px;
+//    height: 122px;
+//    background-color: $main_color;
+//    left: -50%;
+//    top: 2%;
+//    text-align: center;
+//    font: bold 30px/37px 'Service gothic', sans-serif;
+//    color: $black;
+//    transform: rotate(-16.76deg);
+//    padding: 25px 40px;
+//    box-shadow: inset 0px 0px 0px 12px #ffdb58, inset 0px 0px 0px 15px #0c0b0c;
+//  }
+//}
+
+.dream-team{
+  &:after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    max-width: 236px;
+    width: 16vw;
+    max-height: 122px;
+    height: 8.5vw;
+    left: calc(-50% + 50px);
+    transform: translateX(11%);
+    top: -8%;
+    background: url("../img/Dream-team-Comp-1.gif") center/contain no-repeat;
+  }
+  &-mobile:after{
+    width: 164px;
+    height: 94px;
+    left: -7%;
+    transform: translateX(11%);
+    top: -3%;
+  }
+}
+
+.deal {
+  &:after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    max-width: 201px;
+    width: 16vw;
+    max-height: 124px;
+    height: 10vw;
+    right: calc(-28% + 50px);
+    transform: translateX(11%);
+    bottom: 9%;
+    background: url("../img/deal.png") center/contain no-repeat;
+  }
+}
+
+//spoiler
+.spoiler{
+  display: none;
+  visibility: hidden;
+  position: relative;
+
+  label{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font: 700 14px/1 "Moderat", sans-serif;
+  }
+}
+.spoiler input, .spoiler p  {
+  display: none;
+}
+.spoiler label::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: calc(50% - 6px);
+  right: -25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10.4px 6px 0 6px;
+  border-color: #F8F2E3 transparent transparent transparent;
+  margin-right: 5px;
+  transition: transform .3s ease;
+}
+
+.spoiler :checked + label::before {
+  transform: rotate(180deg);
+}
+.spoiler :checked ~ p {
+  display: block;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 992px){
+  .spoiler{
+    display: block;
+    visibility: visible;
+  }
+  .hide-max992{
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px){
+  .br-max768{
+    display: block;
+  }
+}
+
+
+//better together
+.together{
+  display: inline-block;
+  position: absolute;
+  top:0;
+  right: 50%;
+  transform: translate(50%, -75%);
+  @include adaptiv-value("height", 182, 124, 1);
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 5;
+  }
+}
+
+//slider main settings
+
+.slider-main-settings{
+  & .slick-list{
+    overflow: hidden;
+  }
+  & .slick-track{
+    display: flex;
+    align-items: center;
+  }
+  & .slick-arrow {
+    position: absolute;
+    bottom: -44px;
+    z-index: 10;
+    font-size: 0;
+    display: block;
+    margin: 30px auto;
+    width: 25px;
+    height: 25px;
+    border-top: 2px solid $black;
+    border-left: 2px solid $black;
+    background-color: $light;
+
+    &.slick-prev {
+      transform: rotate(-45deg);
+      left: 20%;
+    }
+
+    &.slick-next {
+      transform: rotate(135deg);
+      right: 20%;
+    }
+
+    &.slick-next::after,
+    &.slick-prev::after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 45px;
+      background-color: $black;
+      transform: rotate(-45deg) translate(15px, 4px);
+      left: 0;
+      top: 0;
+    }
+  }
 }

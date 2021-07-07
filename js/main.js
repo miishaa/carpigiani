@@ -1,20 +1,4 @@
-new CircleType(document.getElementById('up'))
-    .radius(200);
 
-new CircleType(document.getElementById('up-2'))
-    .radius(200);
-
-new CircleType(document.getElementById('down'))
-    .dir(-1)
-    .radius(200);
-new CircleType(document.getElementById('up-mobile'))
-    .radius(200);
-
-new CircleType(document.getElementById('up-2-mobile'))
-    .radius(200);
-
-new CircleType(document.getElementById('down-mobile'))
-    .radius(200);
 
 //slider
 
@@ -61,6 +45,20 @@ $(document).ready(function() {
         ]
     })
 });
+
+
+//tabs
+
+    $(function() {
+
+        $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+            $(this)
+                .addClass('active').siblings().removeClass('active')
+                .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+        });
+
+    });
+
 
 // trick
 

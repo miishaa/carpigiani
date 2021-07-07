@@ -1,3 +1,12 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+footer{
+  margin-top: auto;
+}
+
 body.lock{
   overflow: hidden;
 }
@@ -11,42 +20,40 @@ h4{
   font: normal 30px/38px "Moderat",sans-serif;
   text-transform: capitalize;
 }
-//p{
-//  font-size: 1.2rem;
-//  font-weight: 600;
-//}
+
 //banner
 .banner{
   position: relative;
   .container{
     position: relative;
   }
-}
-h1 span{
-  display: block;
-}
-h1 span:first-child{
-  font-family: Recoleta;
-  line-height: .7;
 
-  @include adaptiv-value("font-size", 120, 40, 1);
-}
-h1 span:nth-child(2){
-  @include adaptiv-value("font-size", 150, 60, 1);
-  font-family: "Service gothic";
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 700;
+  h1 span{
+    display: block;
+  }
+  h1 span:first-child{
+    font-family: 'Recoleta', sans-serif;
+    line-height: .7;
 
-  text-transform: uppercase;
-}
-h1 span:nth-child(3){
-  @include adaptiv-value("font-size", 30, 14, 1);
-  font-family: "Moderat";
-  line-height: 1;
-  letter-spacing: 0.02em;
-  font-weight: normal;
-  text-transform: uppercase;
+    @include adaptiv-value("font-size", 120, 40, 1);
+  }
+  h1 span:nth-child(2){
+    @include adaptiv-value("font-size", 150, 60, 1);
+    font-family: "Service gothic", sans-serif;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+
+    text-transform: uppercase;
+  }
+  h1 span:nth-child(3){
+    @include adaptiv-value("font-size", 30, 14, 1);
+    font-family: "Moderat", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
 }
 .banner__title{
   justify-content: flex-start;
@@ -306,7 +313,8 @@ h1 span:nth-child(3){
 }
 
 //text
-#marquee1{
+#marquee1,
+#marquee2,{
   height: 60px;
   padding: 13px;
 }
@@ -722,13 +730,11 @@ h1 span:nth-child(3){
   display: none;
 }
 }
-
 .marquee__inner {
   font-size: 2rem;
   white-space: nowrap;
   display: inline-block;
 }
-
 
 //story
 .story .story__title{

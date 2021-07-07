@@ -1,0 +1,59 @@
+
+.cookie_notice {
+  position: fixed;
+  z-index: 9999999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 80px;
+  border: 2px solid $black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p{
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+  }
+  .btn.bg-pink{
+    padding: 7.5px 19px;
+
+  }
+  .cookie_btn{
+    font: bold 12px/14px "Service gothic", sans-serif;
+    color: $black;
+    padding: 7px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    flex: 0 0 224px;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      background-color: $black;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      transition:  .1s ease-in-out ;
+    }
+    &:hover:after{
+      width: 110px;
+    }
+  }
+  @media (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px;
+    .cookie_btn {
+      flex: 0 0 auto;
+      order: 3;
+    }
+    .btn.bg-pink{
+      margin: 30px 0 20px;
+      order: 2;
+    }
+  }
+}

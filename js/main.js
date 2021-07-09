@@ -43,7 +43,24 @@ $(document).ready(function() {
                 }
             }
         ]
-    })
+    });
+    $('.mainCarousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        draggable: false,
+        infinite: false,
+        asNavFor: '.thumbCarousel',
+    });
+    $('.thumbCarousel').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        draggable: true,
+        infinite: false,
+        asNavFor: '.mainCarousel',
+        focusOnSelect: true,
+    });
 });
 
 
@@ -58,42 +75,6 @@ $(document).ready(function() {
         });
 
     });
-
-
-// trick
-
-function animateMarquee(el, duration) {
-    const innerEl = el.querySelector('.marquee__inner');
-    const innerWidth = innerEl.offsetWidth;
-    const cloneEl = innerEl.cloneNode(true);
-    el.appendChild(cloneEl);
-
-    let start = performance.now();
-    let progress;
-    let translateX;
-
-    requestAnimationFrame(function step(now) {
-        progress = (now - start) / duration;
-
-        if (progress > 1) {
-            progress %= 1;
-            start = now;
-        }
-
-        translateX = innerWidth * progress;
-
-        innerEl.style.transform = `translate3d(-${translateX}px, 0 , 0)`;
-        cloneEl.style.transform = `translate3d(-${translateX}px, 0 , 0)`;
-        requestAnimationFrame(step);
-    });
-}
-const marquee1 = document.querySelector('#marquee1');
-const marquee2 = document.querySelector('#marquee2');
-
-
-animateMarquee(marquee1, 10000);
-animateMarquee(marquee2, 15000);
-
 
 
 //burger menu
@@ -155,5 +136,36 @@ if( animItems.length > 0) {
     setTimeout(() => {
         animOnScroll();
     }, 300)
-
 }
+
+
+//zoom
+
+$("#zoom_1").elevateZoom({
+    zoomType: "inner",
+    cursor: "crosshair",
+});
+$("#zoom_2").elevateZoom({
+    zoomType				: "lens",
+    lensShape : "round",
+    lensSize    : 200
+});
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+
+    Thumbs: false,
+    animated: false,
+    dragToClose: false,
+
+    showClass: false,
+    hideClass: false,
+
+    closeButton: "outside",
+
+    Image: {
+        click: "close",
+        wheel: "slide",
+        zoom: false,
+        fit: "contain",
+    },
+});

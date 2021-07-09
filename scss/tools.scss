@@ -452,3 +452,40 @@ color:$main_color;
     }
   }
 }
+
+//tabs
+.tabs__content {
+  display: none;
+}
+.tabs__content.active {
+  display: block;
+}
+
+//for grid
+.column-span-2{
+  grid-column: span 2;
+}
+.bold{
+  font-weight: 700;
+}
+.row-1st-column{
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.row-2nd-column{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+//download icon
+.download__icon{
+  display: inline-block;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  cursor: pointer;
+  background: url("../img/icons/download.svg") center/contain no-repeat;
+}

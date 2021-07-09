@@ -807,7 +807,7 @@ h4{
   grid-template-columns: 1fr 240px;
 }
 .contact{
-  border-bottom: 4px solid $black;
+  border-bottom: 2px solid $black;
   h3{
     font-family: 'Recoleta', sans-serif;
     font-style: normal;
@@ -826,6 +826,7 @@ h4{
 .footer{
   font: normal 14px/1 "Moderat",sans-serif;
   letter-spacing: .15em;
+  border-top: 2px solid $black;
   & .grid{
     grid-template-rows: auto 45px ;
   }
@@ -1031,6 +1032,7 @@ h4{
     height: 65vh;
     min-height: 530px;
     border-top: none;
+    border-bottom: none;
     border-left: none;
   }
   .consulting{

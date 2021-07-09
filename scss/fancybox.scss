@@ -1,0 +1,43 @@
+
+.fancybox__backdrop{
+  background-color: $light_blue;
+}
+.fancybox__image {
+  width: 100%;
+  height: 100%;
+  min-height: 1px;
+  object-fit: cover;
+}
+.fancybox__content {
+  min-height: 1px;
+  width: 100%;
+  height: 100%;
+}
+.carousel__button.is-close{
+  font-size: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $pink;
+  border: 2px solid $black;
+  color: $black;
+}
+.carousel__button.is-next,
+.carousel__button.is-prev{
+  width: 80px;
+  height: 80px;
+  background-color: $pink;
+  border-radius: 14px;
+  padding: 20px;
+  border: 2px solid $black;
+  background-image: url("../img/icons/arrow-right.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  & svg{
+    display: none;
+  }
+}
+.carousel__button.is-prev{
+  transform: rotate(-180deg);
+}

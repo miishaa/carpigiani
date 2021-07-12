@@ -20,7 +20,9 @@
   border-radius: 50%;
   background-color: $pink;
   border: 2px solid $black;
-  color: $black;
+   svg{
+    stroke: $black;
+  }
 }
 .carousel__button.is-next,
 .carousel__button.is-prev{
@@ -39,5 +41,28 @@
   }
 }
 .carousel__button.is-prev{
-  transform: rotate(-180deg);
+  transform: rotate(-180deg) translateY(50%);
+}
+@media (max-width: 768px) {
+  .carousel__button.is-close,
+  .carousel__button.is-next,
+  .carousel__button.is-prev {
+    width: 40px;
+    height: 40px;
+    background-size: 20px;
+  }
+}
+
+.fancybox__container.is-animated[aria-hidden=false] .fancybox__backdrop{
+  background-color: $black;
+  opacity: .5;
+}
+.fancybox__content>.carousel__button.is-close{
+  transform: translateX(50%);
+}
+.fancybox__html5video, .fancybox__iframe{
+  border: 4px solid $black;
+}
+.fancybox__container.is-animated[aria-hidden=false] .carousel__button.is-close{
+  border: 4px solid $black;
 }

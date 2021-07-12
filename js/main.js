@@ -1,5 +1,6 @@
 
 
+
 //slider
 
 $(document).ready(function() {
@@ -51,6 +52,14 @@ $(document).ready(function() {
         draggable: false,
         infinite: false,
         asNavFor: '.thumbCarousel',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    infinite: true
+                }
+            }
+        ]
     });
     $('.thumbCarousel').slick({
         slidesToShow: 3,
@@ -60,6 +69,15 @@ $(document).ready(function() {
         infinite: false,
         asNavFor: '.mainCarousel',
         focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: true,
+                    infinite: true
+                }
+            }
+        ]
     });
 });
 
@@ -165,7 +183,15 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     Image: {
         click: "close",
         wheel: "slide",
-        zoom: false,
+        zoom: true,
         fit: "contain",
     },
 });
+
+//slider
+
+jQuery(document).ready(function(){
+    jQuery('.spoiler-head').click(function(){
+        $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
+    })
+})

@@ -188,10 +188,35 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
 });
 
-//slider
+//spoiler
 
 jQuery(document).ready(function(){
     jQuery('.spoiler-head').click(function(){
         $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
     })
 })
+
+// test
+// вкладки с содержанием
+
+$(".tab_content").hide();
+$(".tab_content:first").show();
+/* в режиме вкладок */
+$("ul.tabs li").click(function () {
+    $(".tab_content").hide();
+    var activeTab = $(this).attr("rel");
+    $("#" + activeTab).fadeIn();
+    $("ul.tabs li").removeClass("active");
+    $(this).addClass("active");
+    $(".tab_accordion").removeClass("d_active");
+    $(".tab_accordion[rel^='" + activeTab + "']").addClass("d_active");
+});
+/* в режиме аккордеона */
+$(".tab_accordion").click( function () {
+    $(".tab_content").hide();
+    var d_activeTab = $(this).attr("rel");
+    $("#" + d_activeTab).fadeIn();
+    $(".tab_accordion").removeClass("d_active");
+    $("ul.tabs li").removeClass("active");
+    $("ul.tabs li[rel^='" + d_activeTab + "']").addClass("active");
+});

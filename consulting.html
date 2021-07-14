@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <header class="header header-blue">
+    <header class="header header-blue header-bg-light-blue">
         <div class="header__body container grid">
             <a href="./index.html" class="header__logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="142" height="72" viewBox="0 0 142 72" fill="#FFDB58">
@@ -89,7 +89,7 @@
         <section class="consulting-banner bg-light-blue">
             <div class="container">
                 <h1>Consulting</h1>
-                <h3><span class="br">We’re old school – we think</span> <span class="br" >kindness is cool.</span></h3>
+                <h3><span >We’re old school – we</span> <span class="br">think kindness is cool.</span></h3>
                 <div class="circles">
                     <div class="circles__item item-1">
                         <picture>
@@ -121,7 +121,120 @@
                 </div>
             </div>
         </section>
-        <section class="consulting-form"></section>
+        <section class="consulting-form bg-main">
+            <div class="container">
+                <div class="consulting-form__body">
+                    <div class="consulting-form__body-left">
+                        <h2 class="consulting-form-title">Let’s Chat!</h2>
+                        <h3 class="consulting-form-subtitle">Fill out this form and you’ll be contacted by a Carpigiani representative for a free 1-hour
+                            phone consultation.</h3>
+                    </div>
+                    <div class="consulting-form__body-right">
+                        <div class="lets-chat">
+                            <form action="#" class="lets-chat__form" id="form">
+                                <input type="text"  name="firstname" id="firsname" placeholder="First Name *" required>
+                                <input type="text" name="lasttname" id="lastname" placeholder="Last Name *" required>
+                                <input type="text" placeholder="Business Name" >
+                                <input type="tel"  placeholder="Phone number *" required>
+                                <input type="email" name="email" id="email" class="column-span-2" placeholder="Email *" required>
+                                <input type="text" class="column-span-2" placeholder="Business Adress">
+                                <input type="text" placeholder="City *" required>
+                                <input type="text" placeholder="Postal Code" >
+                                <select name="country"   >
+                                    <option selected disabled>Country *</option>
+                                    <option value="USA">United States</option>
+                                    <option value="Canada">Canada</option>
+                                </select>
+                                <select name="state"  >
+                                    <option selected disabled>State / Province *</option>
+                                    <option value="AK">AK</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AR">AR</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="CA">CA</option>
+                                    <option value="CO">CO</option>
+                                    <option value="CT">CT</option>
+                                    <option value="DE">DE</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="HI">HI</option>
+                                    <option value="ID">ID</option>
+                                </select>
+                                <input type="text" class="column-span-2" placeholder="Model/Service you are interested in*" required>
+                                <textarea name="message" class="column-span-2" cols="30" rows="10" placeholder="Type your message here..."></textarea>
+                                <div class="lets-chat__checkboxes column-span-2">
+                                    <h6>PRIVACY POLICY </h6>
+                                    <p>
+                                        I, having read the information, declare to give consent:
+                                    </p>
+                                    <label  class="check">
+                                        <input type="checkbox" class="check__input" required>
+                                        <span class="check__box"></span>
+                                        To the processing of his/her personal data for the management of your request *
+                                    </label>
+                                    <label  class="check">
+                                        <input type="checkbox" class="check__input">
+                                        <span class="check__box"></span>
+                                        To receive newsletters and communications or information and/or advertisement material on products or services offered by the Data Controller or events promoted or organized by the same
+                                    </label>
+                                    <label  class="check">
+                                        <input type="checkbox" class="check__input" required>
+                                        <span class="check__box"></span>
+                                        To the disclosure of the data to third parties such as distributors and/or dealers of the Data Controller's machines, as well as companies with which the Data Controller has commercial collaboration relations, also with registered offices in third countries for which no adequacy decision or other forms of guarantees equivalent to those provided for by the Regulation itself are required **
+                                    </label>
+                                    <p>
+                                        * Mandatory
+                                    </p>
+                                    <p>
+                                        ** We cannot correctly manage your request if you do not authorize point three.
+                                    </p>
+                                    <div class="row">
+                                        <p class="sign-up">
+                                            sign up for your free 1-Hour Phone Consultation now!
+                                        </p>
+                                        <button class="btn bg-pink" id="submit-btn"  type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="marquee5" class="text marquee bg-light-blue text-secondary">
+            <div class="marquee__inner">
+                <span class="ticker ticker-pc">
+                    spread love
+                </span>
+                <span class="ticker ticker-pc">
+                    SERVE ICE CREAM
+                </span>
+                <span class="ticker ticker-pc">
+                    spread love
+                </span>
+                <span class="ticker ticker-pc">
+                    SERVE ICE CREAM
+                </span>
+                <span class="ticker ticker-pc">
+                    spread love
+                </span>
+                <span class="ticker ticker-pc">
+                    SERVE ICE CREAM
+                </span>
+                <span class="ticker ticker-pc">
+                    spread love
+                </span>
+                <span class="ticker ticker-pc">
+                    SERVE ICE CREAM
+                </span>
+                <span class="ticker ticker-pc">
+                    spread love
+                </span>
+                <span class="ticker ticker-pc">
+                    SERVE ICE CREAM
+                </span>
+            </div>
+        </div>
     </main>
     <footer class="footer bg-secondary">
         <div class="container py-4 grid">
@@ -158,5 +271,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/consulting.js"></script>
 </body>
 </html>

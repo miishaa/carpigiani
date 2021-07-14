@@ -13,6 +13,7 @@
   border-radius: 20px;
   padding: 32px 25px;
   position: absolute;
+  z-index: 1;
 }
 
 .consulting-banner{
@@ -144,8 +145,12 @@
       }
     }
     @media (max-width: 992px){
+
+      padding: 117px 0 319px;
+      background-image: none;
+
       .circles{
-        padding: 32px 0 319px;
+        padding: 32px 0 0;
         position: static;
         display: flex;
         align-items: center;
@@ -153,8 +158,58 @@
         flex-direction: column;
         &__item{
           position: relative;
+          z-index: 1;
           & + .circles__item{
             margin-top: 395px;
+          }
+          &:after{
+            position: absolute;
+            content: '';
+            background-image: linear-gradient($secondary 33%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 4px 28px;
+            background-repeat: repeat-y;
+            height: 400px;
+            width: 6px;
+            right: 50%;
+          }
+          &:before{
+            position: absolute;
+            content: '';
+            background-image: url("../img/icons/icecream.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: block;
+            width: 38px;
+            height: 59px;
+            transform: rotate(-45deg);
+            right: calc(50% - 20px);
+            bottom: -100%;
+            z-index: 1;
+          }
+        }
+        &__item:last-child{
+          &:before{
+            bottom: -80%;
+          }
+          .card{
+            &:after{
+              position: absolute;
+              content: '';
+              display: block;
+              width: 35px;
+              height: 35px;
+              transform: rotate(135deg);
+              bottom: -47%;
+              right: calc(50% - 15.5px);
+              z-index: 1;
+              border-top: 5px solid $secondary;
+              border-right: 5px solid $secondary;
+              border-left: 3px solid transparent;
+              border-bottom: 3px solid transparent;
+              border-radius: 5px;
+            }
           }
         }
         .item-3{
@@ -169,3 +224,218 @@
       }
     }
   }
+
+//end consulting-banner
+
+//consulting-form
+
+.consulting-form-title{
+  font-family: 'Recoleta', sans-serif;
+  font-weight: normal;
+  line-height: 1.3611;
+  text-transform: capitalize;
+  text-align: left;
+  @include adaptiv-value('font-size', 72, 40, 1);
+  @media (max-width: 992px) {
+    text-align: center;
+    letter-spacing: -0.03em;
+  }
+}
+
+.consulting-form-subtitle{
+  font-family: 'Moderat', sans-serif;
+  font-weight: normal;
+  line-height: 1.2666;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  @include adaptiv-value('font-size', 30, 18, 1);
+  @media (max-width: 992px) {
+    text-align: center;
+    line-height: 144%;
+    letter-spacing: -0.01em;
+    margin-bottom: 37px;
+  }
+}
+
+.consulting-form{
+  border-top: 2px solid $black;
+  padding: 96px 0 147px;
+  min-height: 1487px;
+  position: relative;
+  z-index: 1;
+  .consulting-form__body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &-left{
+      background-image:
+                        url("../img/Character-05.gif"),
+                        url("../img/lets-chat-bg.svg"),
+                        url("../img/lets-chat-circle.svg");
+      background-size: 400px 658px, contain, 370px 380px;
+      background-repeat: no-repeat;
+      background-position: center, center, 18% 54%;
+    }
+  }
+  .consulting-form__body-right{
+    .lets-chat__form{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 50px;
+      row-gap: 30px;
+      position: relative;
+      &:after{
+        @media (min-width: 992px) {
+          content: 'Required *';
+          position: absolute;
+          top: -35px;
+          right: 0;
+          color: #0c0b0c;
+          font: bold 20px/24px "Moderat",sans-serif;
+        }
+      }
+    }
+    //styling inputs
+    input,
+    select,
+    textarea{
+      display: block;
+      padding: 11px 20px 15px 20px;
+      color: $black;
+      font: bold 20px/24px "Moderat",sans-serif;
+      border: 2px solid $black;
+      border-radius: 14px;
+      &:focus{
+        box-shadow: 0 0 0 4px $pink;
+      }
+      &.error{
+        border: 2px solid red;
+      }
+    }
+  }
+   .error{
+    display: none;
+  }
+  //styling checkboxes
+  .lets-chat__checkboxes{
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    h6{
+      font: bold 14px/18px "Moderat", sans-serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    label{
+      display: block;
+      margin-left: 56px;
+      margin-top: 18px;
+      position: relative;
+      margin-bottom: 17px;
+    }
+    .check__input{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+    .check__box{
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      border: 2px solid $black;
+      border-radius: 50%;
+      margin-left: -56px;
+      top:-5px;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-color: $pink;
+        border-radius: 50%;
+        border: 2px solid $black;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: .1s;
+      }
+    }
+    .check__input:focus + .check__box{
+      box-shadow: 0 0 0 4px $pink;
+    }
+    .check__input:checked + .check__box{
+      &:after{
+        visibility: visible;
+        opacity: 1;
+        transform: translate(50%, -50%) scale(1);
+      }
+    }
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 28px;
+      .sign-up{
+        font: 700 18px/27px "Service gothic",sans-serif;
+        max-width: 303px;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 42px 0 505px;
+    min-height: auto;
+    background-image:
+            url("../img/Character-05.gif"),
+            url("../img/lets-chat-circle.svg");
+    background-size: 250px 404px, 233px 233px;
+    background-repeat: no-repeat;
+    background-position: 50% 97%, 40% 94%;
+    .consulting-form__body{
+      grid-template-columns: 1fr;
+      padding: 0;
+      &-left{
+        background-image: none;
+      }
+    }
+  }
+  @media (max-width: 768px){
+    .consulting-form__body-right .lets-chat__form{
+      grid-template-columns: 1fr;
+      .column-span-2{
+        grid-column: initial;
+      }
+    }
+    .row{
+      flex-direction: column;
+      justify-content: center;
+      .sign-up{
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+
+//trick
+
+#marquee5{
+  height: 60px;
+  padding: 13px;
+  @media (max-width: 768px) {
+    .ticker-pc{
+      display: inline;
+    }
+  }
+}
+.text .ticker-pc::before, #marquee3 .ticker-pc::before{
+  background: url("../img/icons/snowflake.svg") center/cover no-repeat ;
+}

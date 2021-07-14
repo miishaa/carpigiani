@@ -24,7 +24,7 @@
   padding: 12px 25px;
 }
 
-//header-blue
+//header-blue (font and logo)
 
 .header-blue{
   .header__logo svg{
@@ -213,6 +213,9 @@
   .header-bg-red{
     background-color: $red;
   }
+  .header-bg-light-blue{
+    background-color: $light_blue;
+  }
   .header__body.grid{
     grid-template-columns: auto 30px;
   }
@@ -249,7 +252,8 @@
     transition: .3s;
     background-color: $main_color;
   }
-  .header-bg-light{
+  .header-bg-light,
+  .header-bg-light-blue{
     .menu__icon:after, .menu__icon:before, .menu__icon span{
       background-color: $secondary;
     }
@@ -307,6 +311,8 @@
     z-index: 2;
   }
 
+  //modifications
+
   .header-bg-light{
     .menu__body:before{
       background-color: $light;
@@ -317,6 +323,13 @@
       background-color: $red;
     }
   }
+  .header-bg-light-blue{
+    .menu__body:before{
+      background-color: $light_blue;
+    }
+  }
+  //end modifications
+
   .menu__list.flex{
     display: block;
     height: auto;

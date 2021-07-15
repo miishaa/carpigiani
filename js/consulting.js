@@ -31,35 +31,76 @@ const marquee5 = document.querySelector('#marquee5');
 animateMarquee(marquee5, 10000);
 
 
+
+//Validation
 // Wait for the DOM to be ready
 $(function() {
-    // Initialize form validation on the registration form.
-    // It has the name attribute "registration"
-    $("form").validate({
-        // Specify validation rules
-        rules: {
-            // The key name on the left side is the name attribute
-            // of an input field. Validation rules are defined
-            // on the right side
-            firstname: "required",
-            lastname: "required",
-            email: {
-                required: true,
-                // Specify that email should be validated
-                // by the built-in "email" rule
-                email: true
+    $("#form").validate({
+        onfocusout: false,
+        showErrors: false,
+        errorElement: "label",
+        wrapper: "li",
+        invalidHandler: function(event, validator) {
+            // 'this' refers to the form
+            var errors = validator.numberOfInvalids();
+            if (errors) {
+                $(".lets-chat__form").addClass('error');//add class to parent
+            } else {
+                $(".lets-chat__form").removeClass('error');
+                alert('success');
             }
         },
-        // Specify validation error messages
-        messages: {
-            firstname: "Please enter your firstname",
-            lastname: "Please fuckoff",
-            email: "Please enter a valid email address"
+        submitHandler: function() { alert("Submitted!") },
+        errorPlacement: function(error,element) {
+            return true;  // Don't show error
         },
-        // Make sure the form is submitted to the destination defined
-        // in the "action" attribute of the form when valid
-        submitHandler: function(form) {
-            form.submit();
-        }
+        rules: {
+            firstname: {
+                required: true,
+                minlength: 2,
+            },
+            lastname: {
+                required: true,
+                minlength: 2,
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phone: {
+              required: true,
+              phone: true
+            },
+            city: {
+                required: true,
+                minlength: 4
+            },
+            country: {
+                required: true
+            },
+            state: {
+                required: true
+            },
+            message: {
+                required: true,
+                minlength: 5
+            },
+            checkbox1: {
+                required: true
+            },
+            checkbox3: {
+                required: true
+            }
+        },
     });
 });
+
+//scrollbar
+
+const ps = new
+PerfectScrollbar('#state', {
+    wheelSpeed: 2,
+    wheelPropagation: true,
+    minScrollbarLength: 20
+});
+

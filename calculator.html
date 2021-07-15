@@ -152,18 +152,17 @@
                                     </h5>
                                 </div>
                                 <div class="table-1__item bg-main">
-                                    <label for="price1">
-                                        <input id="price1" type="text">
+                                    <label for="selling_price">
+                                        <input id="selling_price" type="text" value="">
                                         <picture class="bg-pink">
                                             <img src="./img/icons/pan.svg"  alt="pan">
                                         </picture>
                                     </label>
-                                    <p>-0.22</p>
+                                    <p id="minus_soft_serve">-0.22</p>
                                     <div class="row">
                                         <h5>=</h5>
-                                        <h5>$1.28</h5>
+                                        <h5 id="profit_per_serving"></h5>
                                     </div>
-
                                 </div>
                                 <div class="table-1__item bg-light">
                                     <p>
@@ -176,17 +175,16 @@
                                 <div class="table-1__item bg-main">
                                     <div class="row">
                                         <span>X</span>
-                                        <label for="price2">
-                                            <input id="price2" type="text">
+                                        <label for="servings_per_day">
+                                            <input id="servings_per_day" type="text" value="">
                                             <picture class="bg-pink">
                                                 <img src="./img/icons/pan.svg"  alt="pan">
                                             </picture>
                                         </label>
                                     </div>
-                                    <p>-0.22</p>
                                     <div class="row">
                                         <h5>=</h5>
-                                        <h5>$1.28</h5>
+                                        <h5 id="profit_per_day"></h5>
                                     </div>
                                 </div>
                                 <div class="table-1__item bg-light">
@@ -200,20 +198,19 @@
                                 <div class="table-1__item bg-main">
                                     <div class="row">
                                         <span>X</span>
-                                            <select name="week" >
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option selected >7</option>
+                                            <select name="week" id="open_per_week" >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option selected value="7" >7</option>
                                             </select>
                                     </div>
-                                    <p>-0.22</p>
                                     <div class="row">
                                         <h5>=</h5>
-                                        <h5>$1.28</h5>
+                                        <h5 id="profit_per_week"></h5>
                                     </div>
                                 </div>
                                 <div class="table-1__item bg-light">
@@ -234,7 +231,7 @@
                                             <option selected>4</option>
                                         </select>
                                     </div>
-                                    <p>-0.22</p>
+
                                     <div class="row">
                                         <h5>=</h5>
                                         <h5>$1.28</h5>
@@ -266,10 +263,9 @@
                                             <option selected>12</option>
                                         </select>
                                     </div>
-                                    <p>-0.22</p>
                                     <div class="row">
                                         <h5>=</h5>
-                                        <h5>$1.28</h5>
+                                        <h5 id="result"></h5>
                                     </div>
                                 </div>
                             </div>
@@ -760,7 +756,7 @@
                            </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn bg-pink"> calculate </button>
+                    <button type="submit" class="btn bg-pink" onclick="calc()"> calculate </button>
                 </div>
             </div>
             <div id="marquee4" class="text marquee bg-light-blue text-secondary">

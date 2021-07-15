@@ -69,18 +69,31 @@
       }
     }
     .item-1{
-      transform: translate(-50%, 100px);
+      transform: translate(-50%, 0);
+      opacity: 0;
+      transition: opacity .3s ease-in-out .9s,
+                  transform .3s ease-in-out .9s;
       @include adaptiv-value("top", 10, 100, 1);
       .card{
         top: 70%;
         left: 60%;
         width: 448px;
       }
+      &._active{
+        opacity: 1;
+        transform: translate(-50%, 100px);
+      }
       @media (max-width: 992px){
-        transform: none;
+        transition: opacity .3s ease-in-out .3s,
+        transform .3s ease-in-out .3s;
+        transform: translate(0, -120%);
         top: initial;
         left: initial;
         right: initial;
+        &._active{
+          opacity: 1;
+          transform: translate(0, 0);
+        }
         .card{
           top: 276px;
           left: 0;
@@ -89,18 +102,31 @@
       }
     }
     .item-2{
-      transform: translate(170%, 370px);
+      transform: translate(170%, -370px);
+      opacity: 0;
+      transition: opacity .3s ease-in-out 1.2s,
+                  transform .3s ease-in-out 1.2s;
       @include adaptiv-value("top", 0, 400, 1);
       .card{
         top: 70%;
         right: 50%;
         width: 391px;
       }
+      &._active{
+        opacity: 1;
+        transform: translate(170%, 370px);
+      }
       @media (max-width: 992px){
-        transform: none;
+        transition: opacity .3s ease-in-out .3s,
+        transform .3s ease-in-out .3s;
+        transform: translate(0, -120%);
         top: initial;
         left: initial;
         right: initial;
+        &._active{
+          opacity: 1;
+          transform: translate(0, 0);
+        }
         .card{
           top: 276px;
           right: 0;
@@ -109,18 +135,31 @@
       }
     }
     .item-3{
-      transform: translate(0, 700px);
+      transform: translate(0, -10%);
+      opacity: 0;
+      transition: opacity .3s ease-in-out 1.7s,
+                  transform .3s ease-in-out 1.7s;
       @include adaptiv-value("top", 0, 500, 1);
       .card{
         top: 50%;
         left: 60%;
         width: 485px;
       }
+      &._active{
+        opacity: 1;
+        transform: translate(0, 700px);
+      }
       @media (max-width: 992px){
-        transform: none;
+        transition: opacity .3s ease-in-out .3s,
+        transform .3s ease-in-out .3s;
+        transform: translate(0, -120%);
         top: initial;
         left: initial;
         right: initial;
+        &._active{
+          opacity: 1;
+          transform: translate(0, 0);
+        }
         .card{
           top: 276px;
           left: 0;
@@ -159,7 +198,7 @@
         &__item{
           position: relative;
           z-index: 1;
-          & + .circles__item{
+          &:not(:last-child){
             margin-top: 395px;
           }
           &:after{
@@ -290,12 +329,38 @@
           position: absolute;
           top: -35px;
           right: 0;
-          color: #0c0b0c;
+          color: $black;
           font: bold 20px/24px "Moderat",sans-serif;
         }
       }
     }
+    .lets-chat__form.error{
+      &:after{
+        @media (min-width: 992px) {
+          color:red;
+        }
+      }
+    }
     //styling inputs
+    select:invalid{
+      color: gray;
+    }
+    select[name='state']{
+      position: relative;
+      height: 100%;
+      &::-webkit-scrollbar {
+        width: 9px;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(12, 11, 12, 0.1);
+        border-radius: 14px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(12, 11, 12, 0.5);
+        border-radius: 14px;
+      }
+    }
     input,
     select,
     textarea{
@@ -306,16 +371,18 @@
       border: 2px solid $black;
       border-radius: 14px;
       &:focus{
-        box-shadow: 0 0 0 4px $pink;
+        box-shadow: 0 0 0 4px $cream;
       }
       &.error{
-        border: 2px solid red;
+        border: 2px solid $red;
+        color: $red;
+      }
+      &.error::placeholder{
+        color: $red;
       }
     }
   }
-   .error{
-    display: none;
-  }
+
   //styling checkboxes
   .lets-chat__checkboxes{
     margin-top: 17px;
@@ -344,6 +411,9 @@
       clip: rect(0 0 0 0);
       overflow: hidden;
     }
+    .check__input.error + .check__box{
+      border-color: $red;
+    }
     .check__box{
       position: absolute;
       width: 36px;
@@ -370,7 +440,7 @@
       }
     }
     .check__input:focus + .check__box{
-      box-shadow: 0 0 0 4px $pink;
+      box-shadow: 0 0 0 4px $cream;
     }
     .check__input:checked + .check__box{
       &:after{

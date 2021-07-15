@@ -91,7 +91,7 @@
                 <h1>Consulting</h1>
                 <h3><span >We’re old school – we</span> <span class="br">think kindness is cool.</span></h3>
                 <div class="circles">
-                    <div class="circles__item item-1">
+                    <div class="circles__item item-1 _anim-items _anim-no-hide">
                         <picture>
                             <img src="./img/consulting-smiling-girl.png" alt="smiling-girl">
                         </picture>
@@ -100,7 +100,7 @@
                             <p>Carpigiani offers consulting to aid customers in finding the best, most suitable technological solutions, recipes, food design concepts, operations management, and product packaging.</p>
                         </article>
                     </div>
-                    <div class="circles__item item-2">
+                    <div class="circles__item item-2 _anim-items _anim-no-hide">
                         <picture>
                             <img src="./img/consulting-icecream.png" alt="icecream">
                         </picture>
@@ -109,7 +109,7 @@
                             <p>We have 70 years of ice cream market knowledge developed by Carpigiani, its local distributors and representatives.</p>
                         </article>
                     </div>
-                    <div class="circles__item item-3">
+                    <div class="circles__item item-3 _anim-items _anim-no-hide">
                         <picture>
                             <img src="./img/consulting-hand.png" alt="hand">
                         </picture>
@@ -132,21 +132,21 @@
                     <div class="consulting-form__body-right">
                         <div class="lets-chat">
                             <form action="#" class="lets-chat__form" id="form">
-                                <input type="text"  name="firstname" id="firsname" placeholder="First Name *" required>
-                                <input type="text" name="lasttname" id="lastname" placeholder="Last Name *" required>
+                                <input type="text"  name="firstname"  placeholder="First Name *" >
+                                <input type="text" name="lastname"  placeholder="Last Name *" >
                                 <input type="text" placeholder="Business Name" >
-                                <input type="tel"  placeholder="Phone number *" required>
-                                <input type="email" name="email" id="email" class="column-span-2" placeholder="Email *" required>
-                                <input type="text" class="column-span-2" placeholder="Business Adress">
-                                <input type="text" placeholder="City *" required>
+                                <input type="tel" name="phone" placeholder="Phone number *" >
+                                <input type="email" name="email"  class="column-span-2" placeholder="Email *">
+                                <input type="text" class="column-span-2" placeholder="Business Address">
+                                <input type="text" name="city" placeholder="City *">
                                 <input type="text" placeholder="Postal Code" >
-                                <select name="country"   >
-                                    <option selected disabled>Country *</option>
+                                <select name="country" required  >
+                                    <option selected disabled hidden value="">Country *</option>
                                     <option value="USA">United States</option>
                                     <option value="Canada">Canada</option>
                                 </select>
-                                <select name="state"  >
-                                    <option selected disabled>State / Province *</option>
+                                <select name="state" id="state" required >
+                                    <option selected disabled hidden value="">State / Province *</option>
                                     <option value="AK">AK</option>
                                     <option value="AL">AL</option>
                                     <option value="AR">AR</option>
@@ -159,26 +159,56 @@
                                     <option value="GA">GA</option>
                                     <option value="HI">HI</option>
                                     <option value="ID">ID</option>
+                                    <option value="IL">IL</option>
+                                    <option value="IA">IA</option>
+                                    <option value="KS">KS</option>
+                                    <option value="KY">KY</option>
+                                    <option value="LA">LA</option>
+                                    <option value="ME">ME</option>
+                                    <option value="MD">MD</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MI">MI</option>
+                                    <option value="AK">AK</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AR">AR</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="CA">CA</option>
+                                    <option value="CO">CO</option>
+                                    <option value="CT">CT</option>
+                                    <option value="DE">DE</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="HI">HI</option>
+                                    <option value="ID">ID</option>
+                                    <option value="IL">IL</option>
+                                    <option value="IA">IA</option>
+                                    <option value="KS">KS</option>
+                                    <option value="KY">KY</option>
+                                    <option value="LA">LA</option>
+                                    <option value="ME">ME</option>
+                                    <option value="MD">MD</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MI">MI</option>
                                 </select>
-                                <input type="text" class="column-span-2" placeholder="Model/Service you are interested in*" required>
-                                <textarea name="message" class="column-span-2" cols="30" rows="10" placeholder="Type your message here..."></textarea>
+                                <input type="text" name="message" class="column-span-2" placeholder="Model/Service you are interested in*">
+                                <textarea  class="column-span-2" cols="30" rows="10" placeholder="Type your message here..."></textarea>
                                 <div class="lets-chat__checkboxes column-span-2">
                                     <h6>PRIVACY POLICY </h6>
                                     <p>
                                         I, having read the information, declare to give consent:
                                     </p>
                                     <label  class="check">
-                                        <input type="checkbox" class="check__input" required>
+                                        <input type="checkbox" name="checkbox1" class="check__input">
                                         <span class="check__box"></span>
                                         To the processing of his/her personal data for the management of your request *
                                     </label>
                                     <label  class="check">
-                                        <input type="checkbox" class="check__input">
+                                        <input type="checkbox" name="checkbox2" class="check__input">
                                         <span class="check__box"></span>
                                         To receive newsletters and communications or information and/or advertisement material on products or services offered by the Data Controller or events promoted or organized by the same
                                     </label>
                                     <label  class="check">
-                                        <input type="checkbox" class="check__input" required>
+                                        <input type="checkbox" name="checkbox3" class="check__input">
                                         <span class="check__box"></span>
                                         To the disclosure of the data to third parties such as distributors and/or dealers of the Data Controller's machines, as well as companies with which the Data Controller has commercial collaboration relations, also with registered offices in third countries for which no adequacy decision or other forms of guarantees equivalent to those provided for by the Regulation itself are required **
                                     </label>
@@ -272,6 +302,7 @@
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/jquery.validate.min.js"></script>
+<script src="js/perfect-scrollbar.min.js"></script>
 <script src="js/consulting.js"></script>
 </body>
 </html>

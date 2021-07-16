@@ -71,8 +71,8 @@
     .item-1{
       transform: translate(-50%, 0);
       opacity: 0;
-      transition: opacity .3s ease-in-out .9s,
-                  transform .3s ease-in-out .9s;
+      transition: opacity .3s ease-in-out .6s,
+                  transform .3s ease-in-out .6s;
       @include adaptiv-value("top", 10, 100, 1);
       .card{
         top: 70%;
@@ -117,8 +117,8 @@
         transform: translate(170%, 370px);
       }
       @media (max-width: 992px){
-        transition: opacity .3s ease-in-out .3s,
-        transform .3s ease-in-out .3s;
+        transition: opacity .3s ease-in-out .9s,
+        transform .3s ease-in-out .9s;
         transform: translate(0, -120%);
         top: initial;
         left: initial;
@@ -152,7 +152,9 @@
       @media (max-width: 992px){
         transition: opacity .3s ease-in-out .3s,
         transform .3s ease-in-out .3s;
-        transform: translate(0, -120%);
+
+        transform: translate(0, -400%);
+
         top: initial;
         left: initial;
         right: initial;
@@ -199,7 +201,7 @@
           position: relative;
           z-index: 1;
           &:not(:last-child){
-            margin-top: 395px;
+            margin-bottom: 395px;
           }
           &:after{
             position: absolute;
@@ -252,7 +254,7 @@
           }
         }
         .item-3{
-          transform: none;
+          transform: translate(0, -700px);
         }
         .item-2{
           right: initial;
@@ -346,8 +348,6 @@
       color: gray;
     }
     select[name='state']{
-      position: relative;
-      height: 100%;
       &::-webkit-scrollbar {
         width: 9px;
       }

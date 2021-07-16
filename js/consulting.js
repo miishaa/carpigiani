@@ -97,10 +97,10 @@ $(function() {
 
 //scrollbar
 
-const ps = new
-PerfectScrollbar('#state', {
-    wheelSpeed: 2,
-    wheelPropagation: true,
-    minScrollbarLength: 20
-});
-
+// const ps = new
+// PerfectScrollbar('#state', {
+//     wheelSpeed: 2,
+//     wheelPropagation: true,
+//     minScrollbarLength: 20
+// });
+//

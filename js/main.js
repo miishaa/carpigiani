@@ -157,6 +157,15 @@ if( animItems.length > 0) {
 }
 
 
+//spoiler
+
+jQuery(document).ready(function(){
+    jQuery('.spoiler-head').click(function(){
+        $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
+    })
+})
+
+
 //zoom
 
 $("#zoom_1").elevateZoom({
@@ -188,13 +197,6 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
 });
 
-//spoiler
-
-jQuery(document).ready(function(){
-    jQuery('.spoiler-head').click(function(){
-        $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
-    })
-})
 
 // test
 // вкладки с содержанием

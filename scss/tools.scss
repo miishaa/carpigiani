@@ -534,11 +534,13 @@ color:$main_color;
 }
 
 //tabs
-.tabs__content {
-  display: none;
-}
-.tabs__content.active {
-  display: block;
+.tabs{
+  .tabs__content {
+    display: none;
+  }
+  .tabs__content.active {
+    display: block;
+  }
 }
 
 //for grid

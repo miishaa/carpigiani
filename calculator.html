@@ -124,82 +124,82 @@
                             <li class="btn">BATCH FREEZER</li>
                         </ul>
                         <!-- replace html code on resolution 768px using data-da="(class),(resolution), (list number)"-->
-                        <div data-da=".calculator__tabs-mobile-1,768,1" class="tabs__content active">
-                            <div class="table-1">
-                                <div class="table-1__item bg-light-blue">
-                                    <h4>
-                                        COST AND PROFIT
-                                    </h4>
-                                    <p>
-                                        For 5% mix and 10% ice-cream
-                                    </p>
-                                </div>
-                                <div class="table-1__item bg-secondary text-light">
-                                    <h4>
-                                        YOUR FIGURES
-                                    </h4>
-                                    <p>
-                                        For a 4oz. serving
-                                    </p>
-                                </div>
-                                <div class="table-1__item bg-light">
-                                    <p>
-                                        Selling Price
-                                    </p>
-                                    <p>
-                                        Minus Food and Container Costs
-                                    </p>
-                                    <h5>
-                                        Profit Per Serving
-                                    </h5>
-                                </div>
-                                <div class="table-1__item bg-main">
-                                    <label for="selling_price">
-                                        <input id="selling_price" name="selling_price" class="selling_price" type="text" value="$ 1.50">
-                                        <picture class="bg-pink">
-                                            <img src="./img/icons/pan.svg"  alt="pan">
-                                        </picture>
-                                    </label>
-                                    <p id="minus_soft_serve">-0.22</p>
-                                    <div class="row">
-                                        <h5>=</h5>
-                                        <h5 id="profit_per_serving"></h5>
+                        <div class="tabs__content active">
+                            <div data-da=".calculator__tabs-mobile-1,768,0" class="table-1">
+                                    <div class="table-1__item bg-light-blue hide-max768">
+                                        <h4>
+                                            COST AND PROFIT
+                                        </h4>
+                                        <p>
+                                            For 5% mix and 10% ice-cream
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="table-1__item bg-light">
-                                    <p>
-                                        Multiply by Servings Per Day
-                                    </p>
-                                    <h5>
-                                        Profits Per Day
-                                    </h5>
-                                </div>
-                                <div class="table-1__item bg-main">
-                                    <div class="row">
-                                        <span>X</span>
-                                        <label for="servings_per_day">
-                                            <input id="servings_per_day" type="text" value="50">
+                                    <div class="table-1__item bg-secondary text-light hide-max768">
+                                        <h4>
+                                            YOUR FIGURES
+                                        </h4>
+                                        <p>
+                                            For a 4oz. serving
+                                        </p>
+                                    </div>
+                                    <div class="table-1__item bg-light">
+                                        <p>
+                                            Selling Price
+                                        </p>
+                                        <p>
+                                            Minus Food and Container Costs
+                                        </p>
+                                        <h5>
+                                            Profit Per Serving
+                                        </h5>
+                                    </div>
+                                    <div class="table-1__item bg-main">
+                                        <label for="selling_price">
+                                            <input id="selling_price" name="selling_price" class="selling_price" type="text" value="$ 1.50">
                                             <picture class="bg-pink">
                                                 <img src="./img/icons/pan.svg"  alt="pan">
                                             </picture>
                                         </label>
+                                        <p id="minus_soft_serve">-0.22</p>
+                                        <div class="row">
+                                            <h5>=</h5>
+                                            <h5 id="profit_per_serving"></h5>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <h5>=</h5>
-                                        <h5 id="profit_per_day"></h5>
+                                    <div class="table-1__item bg-light">
+                                        <p>
+                                            Multiply by Servings Per Day
+                                        </p>
+                                        <h5>
+                                            Profits Per Day
+                                        </h5>
                                     </div>
-                                </div>
-                                <div class="table-1__item bg-light">
-                                    <p>
-                                        Multiply by Days Open Per Week
-                                    </p>
-                                    <h5>
-                                        Profits Per Week
-                                    </h5>
-                                </div>
-                                <div class="table-1__item bg-main">
-                                    <div class="row">
-                                        <span>X</span>
+                                    <div class="table-1__item bg-main">
+                                        <div class="row">
+                                            <span>X</span>
+                                            <label for="servings_per_day">
+                                                <input id="servings_per_day" type="text" value="50">
+                                                <picture class="bg-pink">
+                                                    <img src="./img/icons/pan.svg"  alt="pan">
+                                                </picture>
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <h5>=</h5>
+                                            <h5 id="profit_per_day"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="table-1__item bg-light">
+                                        <p>
+                                            Multiply by Days Open Per Week
+                                        </p>
+                                        <h5>
+                                            Profits Per Week
+                                        </h5>
+                                    </div>
+                                    <div class="table-1__item bg-main">
+                                        <div class="row">
+                                            <span>X</span>
                                             <select name="week" id="open_per_week" >
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -209,70 +209,70 @@
                                                 <option value="6">6</option>
                                                 <option selected value="7" >7</option>
                                             </select>
+                                        </div>
+                                        <div class="row">
+                                            <h5>=</h5>
+                                            <h5 id="profit_per_week"></h5>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <h5>=</h5>
-                                        <h5 id="profit_per_week"></h5>
+                                    <div class="table-1__item bg-light">
+                                        <p>
+                                            Multiply by Weeks Open Per Month
+                                        </p>
+                                        <h5>
+                                            Profits Per Month
+                                        </h5>
                                     </div>
-                                </div>
-                                <div class="table-1__item bg-light">
-                                    <p>
-                                        Multiply by Weeks Open Per Month
-                                    </p>
-                                    <h5>
-                                        Profits Per Month
-                                    </h5>
-                                </div>
-                                <div class="table-1__item bg-main">
-                                    <div class="row">
-                                        <span>X</span>
-                                        <select name="month" id="open_per_month">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4" selected>4</option>
-                                        </select>
-                                    </div>
+                                    <div class="table-1__item bg-main">
+                                        <div class="row">
+                                            <span>X</span>
+                                            <select name="month" id="open_per_month">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4" selected>4</option>
+                                            </select>
+                                        </div>
 
-                                    <div class="row">
-                                        <h5>=</h5>
-                                        <h5 id="profit_per_month"></h5>
+                                        <div class="row">
+                                            <h5>=</h5>
+                                            <h5 id="profit_per_month"></h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="table-1__item bg-light">
-                                    <p>
-                                        Multiply by Months Open Per Year
-                                    </p>
-                                    <h5>
-                                        Profits Per Year
-                                    </h5>
-                                </div>
-                                <div class="table-1__item bg-main">
-                                    <div class="row">
-                                        <span>X</span>
-                                        <select name="year" id="open_per_year" >
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option selected value="12">12</option>
-                                        </select>
+                                    <div class="table-1__item bg-light">
+                                        <p>
+                                            Multiply by Months Open Per Year
+                                        </p>
+                                        <h5>
+                                            Profits Per Year
+                                        </h5>
                                     </div>
-                                    <div class="row">
-                                        <h5>=</h5>
-                                        <h5 id="profit_per_year" ></h5>
+                                    <div class="table-1__item bg-main">
+                                        <div class="row">
+                                            <span>X</span>
+                                            <select name="year" id="open_per_year" >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option selected value="12">12</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <h5>=</h5>
+                                            <h5 id="profit_per_year" ></h5>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
-                            <div class="table-2" data-da=".spoiler-wrap-1,768,0">
-                                <div class="table-2__item bg-light-blue">
+                            <div class="table-2" >
+                                <div class="table-2__item bg-light-blue hide-max768">
                                     <h5>
                                         5% Figures
                                     </h5>
@@ -280,7 +280,7 @@
                                         For 5% mix
                                     </p>
                                 </div>
-                                <div class="table-2__item bg-light-blue">
+                                <div class="table-2__item bg-light-blue hide-max768">
                                     <h5>
                                         10% Figures
                                     </h5>
@@ -363,7 +363,7 @@
                                         x 12
                                     </p>
                                     <h5>
-                                        $18,480.28
+                                        $18,480.00
                                     </h5>
                                 </div>
                                 <div class="table-2__item bg-light">
@@ -371,15 +371,15 @@
                                         x 12
                                     </p>
                                     <h5>
-                                        $21,504.28
+                                        $21,504.00
                                     </h5>
                                 </div>
                             </div>
-                            <button type="submit" class="btn bg-pink" onclick="calcSoftServe()"> calculate </button>
+                            <button data-da=".calculator__tabs-mobile-1,768,last" type="submit" class="btn bg-pink" onclick="calcSoftServe()"> calculate </button>
                         </div>
                         <!-- replace html code on resolution 768px using data-da="(class),(resolution), (list number)"-->
-                        <div data-da=".calculator__tabs-mobile-2,768,1"  class="tabs__content">
-                            <div class="table-1">
+                        <div class="tabs__content">
+                            <div data-da=".calculator__tabs-mobile-2,768,0" class="table-1">
                                 <div class="table-1__item bg-light-blue">
                                     <h4>
                                         COST AND PROFIT
@@ -393,7 +393,7 @@
                                         YOUR FIGURES
                                     </h4>
                                     <p>
-                                        For a 4oz. serving
+                                        For a 16oz. serving
                                     </p>
                                 </div>
                                 <div class="table-1__item bg-light">
@@ -524,7 +524,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-2-one-column" data-da=".spoiler-wrap-2,768,0">
+                            <div class="table-2-one-column" >
                                 <div class="table-2__item bg-light-blue">
                                     <h5>
                                         5% Figures
@@ -577,11 +577,11 @@
                                     </h5>
                                 </div>
                             </div>
-                            <button type="submit" class="btn bg-pink" onclick="calcShake()"> calculate </button>
+                            <button data-da=".calculator__tabs-mobile-2,768,last" type="submit" class="btn bg-pink" onclick="calcShake()"> calculate </button>
                         </div>
                         <!-- replace html code on resolution 768px using data-da="(class),(resolution), (list number)"-->
-                       <div data-da=".calculator__tabs-mobile-3,768,1" class="tabs__content">
-                           <div class="table-1-5-rows">
+                       <div class="tabs__content">
+                           <div data-da=".calculator__tabs-mobile-3,768,0" class="table-1-5-rows">
                                <div class="table-1__item bg-light-blue">
                                    <h4>
                                        COST AND PROFIT
@@ -793,7 +793,7 @@
                                    </div>
                                </div>
                            </div>
-                           <div class="table-2-one-column-5-rows" data-da=".spoiler-wrap-3,768,0">
+                           <div class="table-2-one-column-5-rows" >
                                <div class="table-2__item bg-light-blue">
                                    <h5>
                                        sample figures
@@ -841,61 +841,260 @@
                                    </h5>
                                </div>
                            </div>
-                           <button type="submit" class="btn bg-pink" onclick="calcBatchFreezer()"> calculate </button>
+                           <button data-da=".calculator__tabs-mobile-3,768,last" type="submit" class="btn bg-pink" onclick="calcBatchFreezer()"> calculate </button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- appears on resolution 768px-->
             <div class="calculator__tabs calculator__tabs-mobile show-max768">
-                <!-- replace html code here-->
-                <div class=" spoiler-wrap spoiler-wrap-1">
-                    <div class="calculator__subtitle">
-                        <h3>1. PICK YOUR PRODUCT</h3>
-                        <p>Calculate based on what you’ll be serving day-to-day.</p>
+                <div class="tabs tabs-mobile">
+                    <ul class="tabs__caption">
+                        <li class="active menu-close">Soft serve  </li>
+                        <li class="menu-close">shake </li>
+                        <li class="menu-close">batch freezer </li>
+                    </ul>
+
+                    <div class="tabs__content active">
+                            <div class="sub-tabs">
+                                <div class="tabs-row">
+                                    <div class="fixed bg-light-blue">
+                                        <h4>
+                                            COST AND PROFIT
+                                        </h4>
+                                        <p>
+                                            For 5% mix and 10% ice-cream
+                                        </p>
+                                    </div>
+                                    <ul class="sub-tabs__caption">
+                                        <li class="active menu-close">
+                                            <h4>
+                                                YOUR FIGURES
+                                            </h4>
+                                            <p>
+                                                For a 4oz. serving
+                                            </p>
+                                        </li>
+                                        <li class=" menu-close">
+                                            <h4>
+                                                5% Figures
+                                            </h4>
+                                            <p>
+                                                For 5% mix
+                                            </p>
+                                        </li>
+                                        <li class=" menu-close">
+                                            <h4>
+                                                10% Figures
+                                            </h4>
+                                            <p>
+                                                For 10% mix
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sub-tabs__content active">
+                                    <div class="active calculator__tabs-mobile-1">
+
+                                    </div>
+                                </div>
+                                <div class="sub-tabs__content">
+                                        <div class="table-2" >
+                                            <div class="table-2__item bg-light">
+                                                <p>
+                                                    Selling Price
+                                                </p>
+                                                <p>
+                                                    Minus Food and Container Costs
+                                                </p>
+                                                <h5>
+                                                    Profit Per Serving
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-main">
+                                                <p>
+                                                    $1.25
+                                                </p>
+                                                <p>
+                                                    -0.22
+                                                </p>
+                                                <h5>
+                                                    $1.10
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-light">
+                                                <p>
+                                                    Multiply by Servings Per Day
+                                                </p>
+                                                <h5>
+                                                    Profit Per day
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-main">
+                                                <p>
+                                                    x 50
+                                                </p>
+                                                <h5>
+                                                    $55.00
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-light">
+                                                <p>
+                                                    Multiply by Day Open Per Week
+                                                </p>
+                                                <h5>
+                                                    Profit Per WEEK
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-main">
+                                                <p>
+                                                    x 7
+                                                </p>
+                                                <h5>
+                                                    $385.00
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-light">
+                                                <p>
+                                                    Multiply by Day Open Per Month
+                                                </p>
+                                                <h5>
+                                                    Profit Per MONTH
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-main">
+                                                <p>
+                                                    x 4
+                                                </p>
+                                                <h5>
+                                                    $1540.00
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-light">
+                                                <p>
+                                                    Multiply by Days Open Per Year
+                                                </p>
+                                                <h5>
+                                                    Profit Per YEAR
+                                                </h5>
+                                            </div>
+                                            <div class="table-2__item bg-main">
+                                                <p>
+                                                    x 12
+                                                </p>
+                                                <h5>
+                                                    $18,480.00
+                                                </h5>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="sub-tabs__content">
+                                    <div class="table-2" >
+                                        <div class="table-2__item bg-light">
+                                            <p>
+                                                Selling Price
+                                            </p>
+                                            <p>
+                                                Minus Food and Container Costs
+                                            </p>
+                                            <h5>
+                                                Profit Per Serving
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-main">
+                                            <p>
+                                                $1.25
+                                            </p>
+                                            <p>
+                                                -0.22
+                                            </p>
+                                            <h5>
+                                                $1.28
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-light">
+                                            <p>
+                                                Multiply by Servings Per Day
+                                            </p>
+                                            <h5>
+                                                Profit Per day
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-main">
+                                            <p>
+                                                x 50
+                                            </p>
+                                            <h5>
+                                                $64.00
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-light">
+                                            <p>
+                                                Multiply by Day Open Per Week
+                                            </p>
+                                            <h5>
+                                                Profit Per WEEK
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-main">
+                                            <p>
+                                                x 7
+                                            </p>
+                                            <h5>
+                                                $448.00
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-light">
+                                            <p>
+                                                Multiply by Day Open Per Month
+                                            </p>
+                                            <h5>
+                                                Profit Per MONTH
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-main">
+                                            <p>
+                                                x 4
+                                            </p>
+                                            <h5>
+                                                $1792.00
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-light">
+                                            <p>
+                                                Multiply by Days Open Per Year
+                                            </p>
+                                            <h5>
+                                                Profit Per YEAR
+                                            </h5>
+                                        </div>
+                                        <div class="table-2__item bg-main">
+                                            <p>
+                                                x 12
+                                            </p>
+                                            <h5>
+                                                $21,504.00
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- .tabs-->
                     </div>
-                    <div class="spoiler-head">
-                        SOFT-SERVE
-                    </div>
-                    <div class="spoiler-body container calculator__tabs-mobile-1">
-                        <div class="calculator__subtitle">
-                            <h3>2. CUSTOMIZE YOUR FIGURES</h3>
-                            <p>Edit and adjust what you’ll be charging and when. Find out what you’ll be earn per day, week, month or year!</p>
+
+                    <div class="tabs__content">
+                        <div class="calculator__tabs-mobile-2">
+
                         </div>
                     </div>
-                </div>
-                <!-- replace html code here-->
-                <div class=" spoiler-wrap spoiler-wrap-2">
-                    <div class="calculator__subtitle">
-                        <h3>1. PICK YOUR PRODUCT</h3>
-                        <p>Calculate based on what you’ll be serving day-to-day.</p>
-                    </div>
-                    <div class="spoiler-head">
-                        SHAKE
-                    </div>
-                    <div class="spoiler-body container calculator__tabs-mobile-2">
-                        <div class="calculator__subtitle">
-                            <h3>2. CUSTOMIZE YOUR FIGURES</h3>
-                            <p>Edit and adjust what you’ll be charging and when. Find out what you’ll be earn per day, week, month or year!</p>
+
+                    <div class="tabs__content">
+                        <div class="calculator__tabs-mobile-3">
+
                         </div>
                     </div>
-                </div>
-                <!-- replace html code here-->
-                <div class=" spoiler-wrap spoiler-wrap-3">
-                    <div class="calculator__subtitle">
-                        <h3>1. PICK YOUR PRODUCT</h3>
-                        <p>Calculate based on what you’ll be serving day-to-day.</p>
-                    </div>
-                    <div class="spoiler-head">
-                        BATCH FREEZER
-                    </div>
-                    <div class="spoiler-body container calculator__tabs-mobile-3">
-                        <div class="calculator__subtitle">
-                            <h3>2. CUSTOMIZE YOUR FIGURES</h3>
-                            <p>Edit and adjust what you’ll be charging and when. Find out what you’ll be earn per day, week, month or year!</p>
-                        </div>
-                    </div>
-                </div>
+
+                </div><!-- .tabs-->
             </div>
 
             <div id="marquee4" class="text marquee bg-light-blue text-secondary">

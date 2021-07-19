@@ -90,6 +90,9 @@ color:$main_color;
 .text-light-blue{
   color: $light_blue;
 }
+.text_black{
+  color: $black;
+}
 .br{
   display: block;
 }
@@ -601,6 +604,12 @@ color:$main_color;
   }
   div .show-max768{
     display: block;
+  }
+  .calculator .table-1__item.hide-max768{
+    display: none;
+  }
+  .calculator .table-2 .table-2__item.hide-max768{
+    display: none;
   }
 }
 

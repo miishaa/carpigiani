@@ -95,6 +95,19 @@ $(document).ready(function() {
     });
 
 
+//sub-tabs
+
+$(function() {
+
+    $('ul.sub-tabs__caption').on('click', 'li:not(.active)', function() {
+        $(this)
+            .addClass('active').siblings().removeClass('active')
+            .closest('div.sub-tabs').find('div.sub-tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+    });
+
+});
+
+
 //burger menu
 
 const iconMenu = document.querySelector('.menu__icon');
@@ -116,6 +129,18 @@ if (menuCloses.length > 0){
         });
     }
 }
+
+//submenu
+let menuClose = document.querySelectorAll('.menu-close');
+if (menuClose.length > 0){
+    for (let index = 0; index < menuClose.length; index++) {
+        const menuClos = menuClose[index];
+        menuClos.addEventListener("click", function (e) {
+            menuClos.parentElement.classList.toggle('tab_active');
+        });
+    }
+}
+
 
 //animation on scroll
 

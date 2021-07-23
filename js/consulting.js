@@ -47,7 +47,7 @@ $(function() {
                 $(".lets-chat__form").addClass('error');//add class to parent
             } else {
                 $(".lets-chat__form").removeClass('error');
-                alert('success');
+            //    add class?
             }
         },
         submitHandler: function() { alert("Submitted!") },

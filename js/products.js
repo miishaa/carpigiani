@@ -1,52 +1,69 @@
+// trick
+
+function animateMarquee(el, duration) {
+    const innerEl = el.querySelector('.marquee__inner');
+    const innerWidth = innerEl.offsetWidth;
+    const cloneEl = innerEl.cloneNode(true);
+    el.appendChild(cloneEl);
+
+    let start = performance.now();
+    let progress;
+    let translateX;
+
+    requestAnimationFrame(function step(now) {
+        progress = (now - start) / duration;
+
+        if (progress > 1) {
+            progress %= 1;
+            start = now;
+        }
+
+        translateX = innerWidth * progress;
+
+        innerEl.style.transform = `translate3d(-${translateX}px, 0 , 0)`;
+        cloneEl.style.transform = `translate3d(-${translateX}px, 0 , 0)`;
+        requestAnimationFrame(step);
+    });
+}
+const marquee6 = document.querySelector('#marquee6');
+animateMarquee(marquee6, 15000);
+
+// category picker
 
 
-// prodcuts page - top categories slider - mobile
-let prodCats = $('.videos__body');
-let prodCats2 = $('.stories__body');
 
+$(document).ready(function(){
+    $('.category .category__item').click(function(){
+        $('.category__item').removeClass("_active");
+        $(this).addClass("_active");
+    });
+});
+
+
+// products page - top categories slider - mobile
+
+let prodCats = $('.category');
 function prodCatsSliderFunc($widthScreen) {
-    if ($widthScreen <= "768") {
+    if ($widthScreen <= "992") {
         if (!$(prodCats).hasClass('slick-initialized')) {
             $(prodCats).slick({
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
-                dots: true,
-                arrows: true,
+                dots: false,
+                arrows: false,
                 focusOnSelect: true,
                 draggable: true,
                 infinite: true,
-                responsive: [
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    }
-                ]
             })
         }
-        if (!$(prodCats2).hasClass('slick-initialized')) {
-            $(prodCats2).slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: true,
-                focusOnSelect: true,
-                draggable: true,
-                infinite: true
-            })
-        }
-
     } else {
         if ($(prodCats).hasClass('slick-initialized')) {
             $(prodCats).slick("unslick");
         }
-        if ($(prodCats2).hasClass('slick-initialized')) {
-            $(prodCats2).slick("unslick");
-        }
     }
 }
 let widthScreen = $(window).width();
+
 $(window).ready(
     prodCatsSliderFunc(widthScreen)
 ).resize(function () {

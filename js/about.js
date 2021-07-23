@@ -19,8 +19,6 @@ if( $(window).width() <= 768 ) {
     })
 }
 
-
-
 $(document).ready(function() {
     $('.story-about__slider').slick({
         slidesToShow: 1,

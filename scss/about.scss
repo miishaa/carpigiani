@@ -338,6 +338,20 @@
   padding: 13px;
   @extend .text;
   background-color: $main_color;
+  .ticker{
+    position: relative;
+  }
+  .ticker:after{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url("../img/icons/smile.svg") center / cover no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -43px;
+  }
 }
 
 //story-about

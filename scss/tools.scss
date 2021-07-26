@@ -581,6 +581,10 @@ color:$main_color;
   background: url("../img/icons/download.svg") center/contain no-repeat;
 }
 
+._hide{
+  display: none;
+}
+
 // hide max width 992 & show max width 992
 .show-max992{
   display: none;

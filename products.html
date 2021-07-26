@@ -92,12 +92,12 @@
                 </h1>
                 <div class="products__category container">
                     <div class="category">
-                        <div class="category__item">all</div>
-                        <div class="category__item _active">BATCH FREEZERS</div>
-                        <div class="category__item">HARDENING CABINETS</div>
-                        <div class="category__item">display cases</div>
-                        <div class="category__item">soft serve machines</div>
-                        <div class="category__item">shake machines</div>
+                        <div class="category__item _active" data-filter="all">all</div>
+                        <div class="category__item" data-filter="batchFreezers">BATCH FREEZERS</div>
+                        <div class="category__item" data-filter="hardeningCabinets">HARDENING CABINETS</div>
+                        <div class="category__item" data-filter="displayCases">display cases</div>
+                        <div class="category__item" data-filter="softServeMachines">soft serve machines</div>
+                        <div class="category__item" data-filter="shakeMachines">shake machines</div>
                     </div>
                 </div>
                 <div class="products__filter bg-light">
@@ -116,18 +116,248 @@
                                     <li>WATER COOLED</li>
                                 </ul>
                             </div>
-                            <div class="capacity spoiler-wrap">
+                            <div class="capacity spoiler-wrap" data-category="batchFreezers">
                                 <h5 class="spoiler-head">Capacity</h5>
                                 <div class="spoiler-body capacity__body">
-                                    <label for="capacity_range">
+                                    <label for="capacity_batchFreezers">
                                         QTS PER HOUR
                                     </label>
-                                    <input type="range" id="capacity_range">
+                                    <span class="bar"><span class="fill"></span></span>
+                                    <input type="range" id="capacity_batchFreezers" min="0" max="4" value="0">
+                                    <ul>
+                                        <li>any</li>
+                                        <li>12</li>
+                                        <li>28</li>
+                                        <li>48</li>
+                                        <li>116</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="capacity spoiler-wrap" data-category="hardeningCabinets">
+                                <h5 class="spoiler-head">Capacity</h5>
+                                <div class="spoiler-body capacity__body">
+                                    <label for="capacity_hardeningCabinets">
+                                        NUMBER OF PANS
+                                    </label>
+                                    <span class="bar3"><span class="fill3"></span></span>
+                                    <input type="range" id="capacity_hardeningCabinets" min="0" max="5" value="0">
+                                    <ul>
+                                        <li>any</li>
+                                        <li>2</li>
+                                        <li>6</li>
+                                        <li>12</li>
+                                        <li>15</li>
+                                        <li>21</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="capacity spoiler-wrap" data-category="displayCases">
+                                <h5 class="spoiler-head">Capacity</h5>
+                                <div class="spoiler-body capacity__body">
+                                    <label for="capacity_displayCases">
+                                        NUMBER OF DISPLAYS
+                                    </label>
+                                    <span class="bar4"><span class="fill4"></span></span>
+                                    <input type="range" id="capacity_displayCases" min="0" max="5" value="0">
+                                    <ul>
+                                        <li>any</li>
+                                        <li>4</li>
+                                        <li>6</li>
+                                        <li>8</li>
+                                        <li>12</li>
+                                        <li>16</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="capacity spoiler-wrap" data-category="softServeMachines">
+                                <h5 class="spoiler-head">Capacity</h5>
+                                <div class="spoiler-body capacity__body">
+                                    <label for="capacity_softServeMachines">
+                                        4 OZ SERVINGS PER HOUR
+                                    </label>
+                                    <span class="bar2"><span class="fill2"></span></span>
+                                    <input type="range" id="capacity_softServeMachines" min="0" max="4" value="0">
+                                    <ul>
+                                        <li>any</li>
+                                        <li>95</li>
+                                        <li>175</li>
+                                        <li>265</li>
+                                        <li>960</li>
+                                    </ul>
                                 </div>
                             </div>
                         </aside>
-                        <main class="filter__main"></main>
+                        <main class="filter__result">
+                            <header class="result__header">
+                                <div class="counter bg-light"></div>
+                            </header>
+                            <div class="result">
+                                <h3 data-category="batchFreezers">BATCH FREEZERS</h3>
+                                <a href="single-product.html" data-category="batchFreezers" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/_Lab%20100%20B_0042.png" alt="Lab 100">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>LB 100 B</h6>
+                                        <p>Twin-twist Floor Model</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="batchFreezers" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/LB%20200_0025%202.png" alt="LB 200">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>LB 200 IC</h6>
+                                        <p>Twin-twist Floor Model</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="batchFreezers" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/LB%20302%20RTX.png" alt="LB302 RTX">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>LB302 RTX</h6>
+                                        <p>Twin-twist Floor Model</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="batchFreezers" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/_LB%20502%20DGT_.png" alt="LB502 DGT">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>LB502 DGT</h6>
+                                        <p>Twin-twist Floor Model</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="batchFreezers" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/_LB%20%201002%20RTX_laterale%20dx.png" alt="LB1002 RTX">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>LB1002 RTX</h6>
+                                        <p>Twin-twist Floor Model</p>
+                                    </div>
+                                </a>
+                                <hr data-category="all">
+                                <h3 data-category="hardeningCabinets">HARDENING CABINETS</h3>
+                                <a href="single-product.html" data-category="hardeningCabinets" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Nordika%2050.png" alt="Nordika 50">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>NK 50</h6>
+                                        <p>Nordika Blast Freezer</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="hardeningCabinets" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Nordika%20100.png" alt="Nordika 100">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>NK 100</h6>
+                                        <p>Nordika Blast Freezer</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="hardeningCabinets" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Nordika%20200.png" alt="Nordika 200">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>NK 200</h6>
+                                        <p>Nordika Blast Freezer</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="hardeningCabinets" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Nordika%20300.png" alt="Nordika 300">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>NK 300</h6>
+                                        <p>Nordika Blast Freezer</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="hardeningCabinets" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Nordika%20400.png" alt="Nordika 400">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>NK 400</h6>
+                                        <p>Nordika Blast Freezer</p>
+                                    </div>
+                                </a>
+                                <hr data-category="all">
+                                <h3 data-category="displayCases">display cases</h3>
+                                <a href="single-product.html" data-category="displayCases" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/Coldwall%208.png" alt="Coldwall series">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>Coldwall series</h6>
+                                        <p>Display Case</p>
+                                    </div>
+                                </a>
+                                <hr data-category="all">
+                                <h3 data-category="softServeMachines">soft serve machines</h3>
+                                <a href="single-product.html" data-category="softServeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/151%20Soft&Go%20Plus_vista%20laterale%20dx_3021.png" alt="151 Soft & Go Plus">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>151 Soft & Go Plus</h6>
+                                        <p>Countertop Soft Serve Machine</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="softServeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/191.png" alt="191 series">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>191 series</h6>
+                                        <p>Countertop Soft Serve Machine</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="softServeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/193%20series.png" alt="193 series">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>193 series</h6>
+                                        <p>Countertop Soft Serve Machine</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="softServeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/UF%20920.png" alt="UF 920">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>UF 920</h6>
+                                        <p>Countertop Soft Serve Machine</p>
+                                    </div>
+                                </a>
+                                <a href="single-product.html" data-category="softServeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/K3%20E.png" alt="k3/e">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>k3/e</h6>
+                                        <p>Countertop Soft Serve Machine</p>
+                                    </div>
+                                </a>
+                                <hr data-category="all">
+                                <h3 data-category="shakeMachines">shake machines</h3>
+                                <a href="single-product.html" data-category="shakeMachines" class="products__item bg-light-blue">
+                                    <picture>
+                                        <img src="./img/products/191K.png" alt="191 K SP">
+                                    </picture>
+                                    <div class="bg-main">
+                                        <h6>191 K SP</h6>
+                                        <p>Performance Shake Machine</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </main>
                     </div>
+
                 </div>
         </section>
         <div id="marquee6" class="text marquee bg-light-blue text-secondary">

@@ -264,6 +264,7 @@
           top: 50%;
           left: 0;
           transform: translate(-50px, -50%);
+          transition: background-color .15s linear;
         }
         & + li{
           margin: 24px 0 0 0;
@@ -716,8 +717,6 @@
   }
   @media (max-width: 768px) {
 
-    padding: 67px 0 92px;
-
     .container{
       grid-template-columns: 1fr;
     }
@@ -805,6 +804,7 @@
         font: bold 18px/22px "Service gothic", sans-serif;
         text-transform: uppercase;
         padding: 0 0 15px 0;
+        text-align: center;
       }
       p{
         font-family: 'Moderat', sans-serif;

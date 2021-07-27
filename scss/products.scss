@@ -24,7 +24,10 @@
 
 //products
 .products{
-  padding: 152px 0 0;
+  padding: 227px 0 0;
+  @media (max-width: 992px){
+    padding: 110px 0 0;
+  }
   &__title{
     font-family: 'Recoleta', sans-serif;
     @include adaptiv-value('font-size', 100, 60, 1);
@@ -62,6 +65,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    @media (max-width: 768px){
+      padding: 13px 19px;
+      min-height: 43px;
+      margin: 0 5px;
+      background: #BDCEE7;
+      color: $secondary;
+    }
     &:hover{
       background-color: rgba(248, 242, 227, .6);
       color: $secondary;
@@ -87,14 +98,19 @@
   padding: 55px 15px 90px;
   @media (max-width: 992px){
     grid-template-columns: 1fr;
+    padding: 32px 15px 90px;
   }
   &__aside{
     padding: 17px 0 0 0;
     @media (max-width: 992px){
       display: flex;
       justify-content: space-between;
+      position: relative;
+      padding: 0;
       & > *{
         flex-basis: 100%;
+        position: absolute;
+        width: 48.6666667%;
       }
     }
     //features
@@ -104,8 +120,13 @@
       border: 1px solid transparent;
       transition: border .2s ease-in-out;
       @media (max-width: 992px){
+        left: 0;
+        z-index: 10;
         &.active{
           border: 1px solid $black;
+          & .spoiler-head:after{
+            transform: translateY(-50%) rotate(180deg);
+          }
         }
       }
       .spoiler-head{
@@ -117,15 +138,24 @@
           top: 5px;
           transform: translateY(0);
         }
+        span{
+          color: $light;
+          background-color: $black;
+          border-radius: 50%;
+          padding: 5px 11px;
+          margin: 0 0 0 15px;
+        }
         @media (max-width: 992px){
-          padding: 20px 0;
+          padding: 20px 10px;
           font-size: 20px;
+          border-bottom: 1px solid $black;
           &:after{
             top: 50%;
             transform: translateY(-50%);
+            right: 10px;
           }
         }
-        @media (min-width: 992px) {
+        @media (min-width: 993px) {
           &:before{
             content: "";
             display: block;
@@ -141,6 +171,35 @@
       .features__body{
         border-top: 1px solid $black;
         padding: 25px 25px 25px 50px;
+        li{
+          cursor: pointer;
+        }
+        li.checked{
+          &:after{
+            background-color: $black;
+          }
+        }
+        @media (min-width: 992px){
+          display: block;
+        }
+        @media (max-width: 992px){
+          border-top: none;
+          padding: 25px 25px 25px 60px;
+        }
+        @media (max-width: 768px){
+          padding: 14px 14px 14px 45px;
+          li{
+            font-size: 10px;
+            & + li{
+              margin: 17px 0 0 0;
+            }
+            &:after{
+              width: 16px;
+              height: 16px;
+              transform: translate(-30px, -50%);
+            }
+          }
+        }
       }
     }
   }
@@ -151,13 +210,16 @@
     row-gap: 60px;
     align-items: flex-start;
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fit, minmax(163px ,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(139px ,1fr));
+      padding: 108px 0 0 0 ;
+      row-gap: 25px;
     }
     h3{
       font: bold 36px/1 "Service gothic",sans-serif;
       text-transform: uppercase;
       padding: 0 0 20px 0;
       grid-column: 1 / -1;
+      position: relative;
       &:first-child{
         border-bottom: 1px solid $black;
       }
@@ -165,19 +227,24 @@
     hr{
       grid-column: 1 / -1;
       background-color: $black;
-      display: block;
-      width: 100%;
       height: 1px;
     }
     .products__item{
       overflow: hidden;
       border-radius: 30px;
-      height: auto;
+      height: 100%;
       max-width: 320px;
+      max-height: 405px;
+      min-height: 207px;
+      &:hover img{
+        overflow: hidden;
+        transform: scale(1.1);
+      }
       picture{
         overflow: hidden;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: .5vw;
+        margin-bottom: .5vw;
+        padding: 0 0 95% 0;
       }
       div{
         border: none;
@@ -207,15 +274,21 @@
 //result header
 .result__header{
   position: relative;
-  .counter{
-    font: bold 14px/1 "Moderat", sans-serif;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    position: absolute;
-    top: 55px;
-    transform: translate(0, -50%);
-    right: 0;
-    padding: 0 0 0 55px;
+}
+.counter{
+  font: bold 14px/1 "Moderat", sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: absolute;
+  top: 55px;
+  transform: translate(0, -50%);
+  right: 0;
+  padding: 0 0 0 55px;
+  z-index: 1;
+  @media (max-width: 992px){
+    top: 100%;
+    left: 0;
+    padding: 0;
   }
 }
 //end result header
@@ -224,9 +297,14 @@
 .capacity{
   border: 1px solid transparent;
   transition: border .2s ease-in-out;
-  @media (max-width: 992px){
-    &.active{
+  @media (max-width: 992px) {
+    right: 0;
+    z-index: 10;
+    &.active {
       border: 1px solid $black;
+      & .spoiler-head:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
     }
   }
   &._hide{
@@ -243,15 +321,16 @@
     pointer-events: none;
     @media (max-width: 992px) {
       font-size: 20px;
-      padding: 20px 0;
+      padding: 20px 10px;
       pointer-events: all;
       cursor: pointer;
+      border-bottom: 1px solid $black;
       &:after {
         content: "";
         display: block;
         position: absolute;
         top: 50%;
-        right: 20px;
+        right: 10px;
         transform: translateY(-50%);
         transition: transform .3s ease;
         width: 0;
@@ -268,6 +347,11 @@
     position: relative;
     @media (max-width: 992px) {
       display: none;
+      padding: 0 10px 10px 10px;
+      border-top: none;
+    }
+    @media (min-width: 992px){
+      display: block;
     }
   }
   label{
@@ -277,6 +361,9 @@
     color: $black;
     margin:  19px 0 10px;
     letter-spacing: 0.15em;
+    @media (max-width: 768px){
+      font-size: 10px;
+    }
   }
   ul{
     display: flex;
@@ -287,6 +374,9 @@
     color: $black;
     margin:  10px 0 0;
     letter-spacing: 0.15em;
+    @media (max-width: 768px){
+      font-size: 10px;
+    }
   }
   //style input
   .bar,
@@ -363,8 +453,169 @@
     border-color: transparent;
     color: transparent;
   }
+  @media (max-width: 992px){
+    .bar,
+    .bar2,
+    .bar3,
+    .bar4{
+      position: relative;
+      top: 12px;
+      display: block;
+    }
+  }
 }
 //end capacity
 
 
+//links section
+.links{
+  border-top: 2px solid $black;
+  h6{
+    font: bold 14px/1 "Moderat",sans-serif;
+    text-transform: uppercase;
+    color: $black;
+    letter-spacing: .15em;
+  }
+  h5{
+    font: 30px/127% "Moderat", sans-serif;
+    letter-spacing: -0.02em;
+    padding: 20px 0 13px;
+  }
+  &__content:last-child{
+    background: url("../img/products/193 series.png") 100% 1000px / 320px 400px no-repeat;
+    transition: background .8s ease .3s;
+  }
+  p{
+    font: 18px/144% "Moderat", sans-serif;
+    letter-spacing: -0.02em;
+    padding: 0 0 10px 0;
+  }
+  &__content:first-child{
+    .links__img{
+      flex-basis: 50%;
+      height: 100%;
+      position: relative;
+      transition: opacity .3s ease .3s,transform .8s ease .3s;
+      opacity: 0;
+      transform: translateY(20%);
+      [alt="better together"]{
+        max-width: 140px;
+        max-height: 140px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(35%, -35%);
+      }
+      [alt="boy with ice-cream"]{
+        max-height: 210px;
+        max-width: 210px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(77%, -75%);
+        border: 2px solid $red;
+        border-radius: 50%;
+        box-shadow: 7px 7px 0 rgb(0 0 0 / 0.2);
+      }
+    }
+  }
+  // animation
+  .links__content:first-child .links__img._active{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .links__content:last-child._active{
+    background-position: 100% 100%;
+  }
+}
+
+@media (min-width: 993px )  {
+  .links{
+    background-image: linear-gradient( to right, $pink 50%, $main_color 50%);
+    h5{
+      padding: 24px 0 25%;
+    }
+    p{
+      padding: 0 0 35px 0;
+    }
+  }
+  .links__body{
+    display: flex;
+    height: 100%;
+    & > *{
+      width: 100%;
+    }
+  }
+  .links__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0 40px;
+  }
+  .links__text{
+    flex-basis: 53%;
+  }
+  .links__content:first-child{
+    padding-right: 5.6%;
+  }
+  .links__content:last-child{
+    padding-left: 5.6%;
+    border-left: 2px solid $black;
+    p {
+      max-width: 250px;
+    }
+  }
+}
+@media (max-width: 992px ){
+  .links{
+    .container{
+      padding: 0;
+    }
+  }
+  .links__content{
+    padding: 36px 15px;
+    min-height: 560px;
+  }
+  .links__content:first-child{
+    background-color: $pink;
+    border-bottom: 2px solid $black;
+    .links__img{
+      [alt="better together"]{
+        right: 0;
+        transform: translate(-110px, 85%);
+      }
+      [alt="boy with ice-cream"]{
+        right: 0;
+        transform: translate(-15px, 12%);
+      }
+    }
+  }
+  .links__content:last-child{
+    background-color: $main_color;
+  }
+}
+@media (max-width: 768px) {
+  .links__content:first-child{
+    .links__img{
+      transform: translateY(100px);
+      [alt="better together"]{
+        max-width: 120px;
+        max-height: 120px;
+      }
+    }
+  }
+  .links__content:last-child{
+    background: $main_color url("../img/products/193 series.png") 100% 1000px / 310px 360px no-repeat;
+  }
+  //animation
+  .links__content:first-child .links__img._active{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .links__content:last-child._active{
+    background-position: 100% 100%;
+  }
+}
+//end of links section
 //end products

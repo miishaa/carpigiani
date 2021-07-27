@@ -52,7 +52,18 @@ function prodCatsSliderFunc($widthScreen) {
                 focusOnSelect: true,
                 draggable: true,
                 infinite: true,
-            })
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            centerMode: true,
+                            centerPadding: '40px',
+                            variableWidth: true,
+                            slidesToShow: 3,
+                        }
+                    }
+                ]
+            });
         }
     } else {
         if ($(prodCats).hasClass('slick-initialized')) {
@@ -109,6 +120,8 @@ $(window).ready(
 // filter and counter
 
 $(document).ready(function () {
+
+
     //counter
 
     $('.products__item').addClass('show');
@@ -123,6 +136,9 @@ $(document).ready(function () {
 
     // to hide capacity
     $('.capacity').addClass('_hide');
+    $('.features__block:not(:first)').addClass('_hide');
+
+
     //filter
 
     let filter = $('[data-filter]'); // all items with this attr
@@ -131,13 +147,14 @@ $(document).ready(function () {
         if (category == 'all'){
             $('[data-category]').removeClass('_hide').addClass('show');
             $('.capacity').addClass('_hide');
-            $('h3:not(:first-child)').css('border-bottom', 'none');
+            $('.features__block:not(:first)').addClass('_hide');
+            $('h3[data-category]:not(:first-child)').css('border-bottom', 'none');
         } else {
             $('[data-category]').each( function () {
                 let workCategory = $(this).data('category');
                 if (workCategory != category){  // if name of attr is not the not same with this category
                     $(this).addClass('_hide').removeClass('show');
-                    $('h3').css('border-bottom', '1px solid black');
+                    $('h3[data-category]').css('border-bottom', '1px solid black');
                 } else {
                     $(this).removeClass('_hide').addClass('show');
                 }
@@ -158,9 +175,6 @@ $(document).ready(function () {
     let $slider4 = $('#capacity_displayCases');
     let $fill4 = $('.bar4 .fill4');
 
-
-
-    capacity_displayCases
 
     function setBar() {
         if ($slider.val() == 0){
@@ -233,6 +247,45 @@ $(document).ready(function () {
 
     $slider.on('input', setBar);
     setBar();
+
+
+    //features picker
+    $('.products__filter .features__body li').on('click', function () {
+        $(this).toggleClass('checked');
+        featuresCounter1();
+        featuresCounter2();
+        featuresCounter3();
+        featuresCounter4();
+        featuresCounter5();
+    });
+
+    //features counter
+    function featuresCounter1() {
+        let counter = $('.filter-counter1');
+        let units = $('.products__filter [data-category="batchFreezers"] .features__body').children('li.checked').length;
+        counter.text(units);
+    }
+    function featuresCounter2() {
+        let counter = $('.filter-counter2');
+        let units = $('.products__filter [data-category="hardeningCabinets"] .features__body').children('li.checked').length;
+        counter.text(units);
+    }
+    function featuresCounter3() {
+        let counter = $('.filter-counter3');
+        let units = $('.products__filter [data-category="displayCases"] .features__body').children('li.checked').length;
+        counter.text(units);
+    }
+    function featuresCounter4() {
+        let counter = $('.filter-counter4');
+        let units = $('.products__filter [data-category="softServeMachines"] .features__body').children('li.checked').length;
+        counter.text(units);
+    }
+    function featuresCounter5() {
+        let counter = $('.filter-counter5');
+        let units = $('.products__filter [data-category="shakeMachines"] .features__body').children('li.checked').length;
+        counter.text(units);
+    }
+
 
 });
 

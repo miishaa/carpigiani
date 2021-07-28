@@ -144,6 +144,7 @@
           border-radius: 50%;
           padding: 5px 11px;
           margin: 0 0 0 15px;
+          display: none;
         }
         @media (max-width: 992px){
           padding: 20px 10px;
@@ -205,14 +206,16 @@
   }
   .result{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(242px ,1fr));
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 3.5%;
     row-gap: 60px;
     align-items: flex-start;
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fit, minmax(139px ,1fr));
       padding: 108px 0 0 0 ;
       row-gap: 25px;
+    }
+    @media (max-width: 480px){
+      grid-template-columns: repeat(2, 1fr);
     }
     h3{
       font: bold 36px/1 "Service gothic",sans-serif;
@@ -234,8 +237,8 @@
       border-radius: 30px;
       height: 100%;
       max-width: 320px;
-      max-height: 405px;
       min-height: 207px;
+      grid-template-rows: auto 1fr;
       &:hover img{
         overflow: hidden;
         transform: scale(1.1);
@@ -251,6 +254,7 @@
         color: $black;
         height: initial;
         padding: 20px 15px;
+        justify-content: end;
         h6{
           padding: 0;
         }
@@ -481,10 +485,6 @@
     letter-spacing: -0.02em;
     padding: 20px 0 13px;
   }
-  &__content:last-child{
-    background: url("../img/products/193 series.png") 100% 1000px / 320px 400px no-repeat;
-    transition: background .8s ease .3s;
-  }
   p{
     font: 18px/144% "Moderat", sans-serif;
     letter-spacing: -0.02em;
@@ -519,19 +519,36 @@
       }
     }
   }
+  &__content:last-child{
+    position: relative;
+    .links__img{
+      img[alt="193 Series"]{
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        @include adaptiv-value('height', 400, 300, 1);
+        transition: opacity .3s ease .3s,transform .8s ease .3s;
+        opacity: 0;
+        transform: translateY(20%);
+      }
+    }
+  }
   // animation
   .links__content:first-child .links__img._active{
     opacity: 1;
     transform: translateY(0);
   }
-
-  .links__content:last-child._active{
-    background-position: 100% 100%;
+  .links__content:last-child .links__img._active{
+    img[alt="193 Series"]{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
-
 @media (min-width: 993px )  {
   .links{
+    overflow: hidden;
     background-image: linear-gradient( to right, $pink 50%, $main_color 50%);
     h5{
       padding: 24px 0 25%;
@@ -554,7 +571,7 @@
     padding: 80px 0 40px;
   }
   .links__text{
-    flex-basis: 53%;
+    flex-basis: 50%;
   }
   .links__content:first-child{
     padding-right: 5.6%;
@@ -564,6 +581,9 @@
     border-left: 2px solid $black;
     p {
       max-width: 250px;
+    }
+    img[alt="193 Series"]{
+      right: -45px;
     }
   }
 }
@@ -576,19 +596,18 @@
   .links__content{
     padding: 36px 15px;
     min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & >  *{
+      flex-basis: 100%;
+    }
   }
   .links__content:first-child{
     background-color: $pink;
     border-bottom: 2px solid $black;
     .links__img{
-      [alt="better together"]{
-        right: 0;
-        transform: translate(-110px, 85%);
-      }
-      [alt="boy with ice-cream"]{
-        right: 0;
-        transform: translate(-15px, 12%);
-      }
+      flex-basis: 100%;
     }
   }
   .links__content:last-child{
@@ -596,25 +615,37 @@
   }
 }
 @media (max-width: 768px) {
-  .links__content:first-child{
-    .links__img{
+  .links__content{
+    display: block;
+  }
+  .links__content:first-child {
+    .links__img {
       transform: translateY(100px);
-      [alt="better together"]{
+
+      [alt="better together"] {
+        right: 0;
+        transform: translate(-110px, 85%);
         max-width: 120px;
         max-height: 120px;
       }
+
+      [alt="boy with ice-cream"] {
+        right: 0;
+        transform: translate(-15px, 12%);
+      }
     }
-  }
-  .links__content:last-child{
-    background: $main_color url("../img/products/193 series.png") 100% 1000px / 310px 360px no-repeat;
-  }
-  //animation
-  .links__content:first-child .links__img._active{
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .links__content:last-child._active{
-    background-position: 100% 100%;
+
+    //animation
+    .links__content:first-child .links__img._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .links__content:last-child .links__img._active{
+      img[alt="193 Series"]{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 }
 //end of links section

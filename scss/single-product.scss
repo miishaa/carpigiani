@@ -656,6 +656,9 @@
 
 //consulting-products
 .consulting-products{
+  display: flex;
+  align-items: center;
+  min-height: 560px;
   padding: 40px 0;
   .container{
     display: grid;

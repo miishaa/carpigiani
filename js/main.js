@@ -142,16 +142,6 @@ samplesDropdown.on("click", "li", function() {
     }
 });
 
-// const title = document.querySelector('.calculator__title');
-// const child = title.firstElementChild;
-// title.addEventListener('click', function () {
-//     title.classList.toggle('active');
-//     if(title.classList.contains('active')){
-//         child.style.color = 'red';
-//     } else {
-//         child.style.color = '';
-//     }
-// })
 
 
 
@@ -234,10 +224,25 @@ if( animItems.length > 0) {
 
 //spoiler
 
-jQuery(document).ready(function(){
-    jQuery('.spoiler-head').click(function(){
-        $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
+$(document).ready(function () {
+
+    $('.spoiler-head').on("click", function() {
+        let windowWidth = $(window).width();
+        if (windowWidth <= 992) {
+            $(this).parents('.spoiler-wrap').toggleClass("active").find('.spoiler-body').slideToggle();
+        }
+    });
+
+    $(window).resize(function () {
+        let windowWidth = $(window).width();
+        if (windowWidth >= 993){
+            $('.spoiler-wrap').removeClass("active");
+            $('.spoiler-body').show();
+        } else {
+            $('.spoiler-body').hide();
+        }
     })
+
 })
 
 
@@ -271,32 +276,4 @@ Fancybox.bind('[data-fancybox="gallery"]', {
         fit: "contain",
     },
 });
-
-
-// test
-// вкладки с содержанием
-//
-// $(".tab_content").hide();
-// $(".tab_content:first").show();
-// /* в режиме вкладок */
-// $("ul.tabs li").click(function () {
-//     $(".tab_content").hide();
-//     var activeTab = $(this).attr("rel");
-//     $("#" + activeTab).fadeIn();
-//     $("ul.tabs li").removeClass("active");
-//     $(this).addClass("active");
-//     $(".tab_accordion").removeClass("d_active");
-//     $(".tab_accordion[rel^='" + activeTab + "']").addClass("d_active");
-// });
-// /* в режиме аккордеона */
-// $(".tab_accordion").click( function () {
-//     $(".tab_content").hide();
-//     var d_activeTab = $(this).attr("rel");
-//     $("#" + d_activeTab).fadeIn();
-//     $(".tab_accordion").removeClass("d_active");
-//     $("ul.tabs li").removeClass("active");
-//     $("ul.tabs li[rel^='" + d_activeTab + "']").addClass("active");
-// });
-
-
 
